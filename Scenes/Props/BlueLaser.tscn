@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Scripts/BlueLaser.cs" type="Script" id=1]
+[ext_resource path="res://Sprites/Tiles/eye.png" type="Texture" id=2]
+
+[node name="BlueLaser" type="RayCast2D"]
+modulate = Color( 0, 0.25, 1, 1 )
+light_mask = 2
+cast_to = Vector2( 277, 0 )
+script = ExtResource( 1 )
+
+[node name="Line2D" type="Line2D" parent="."]
+light_mask = 2
+z_index = 1
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 0.2
+default_color = Color( 0, 0.172549, 0.952941, 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -5, 0 )
+texture = ExtResource( 2 )

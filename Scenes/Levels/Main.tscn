@@ -126,11 +126,14 @@ color = Color( 1, 1, 1, 0 )
 [node name="LightFlicker" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
 script = ExtResource( 1 )
-_lightsOn = false
 
 [node name="Timer" type="Timer" parent="LightFlicker"]
 wait_time = 10.0
 autostart = true
+
+[node name="LightsOnTimer" type="Timer" parent="LightFlicker"]
+wait_time = 2.0
+one_shot = true
 
 [node name="MainUI" parent="." instance=ExtResource( 4 )]
 
@@ -138,3 +141,4 @@ autostart = true
 environment = SubResource( 3 )
 
 [connection signal="timeout" from="LightFlicker/Timer" to="LightFlicker" method="_on_Timer_timeout"]
+[connection signal="timeout" from="LightFlicker/LightsOnTimer" to="LightFlicker" method="_on_LightsOnTimer_timeout"]
