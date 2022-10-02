@@ -1,10 +1,11 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
-[ext_resource path="res://Sprites/Tiles/Walls_Block.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Props/Entrance.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Props/Exit.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Props/Entrance.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Props/FallingPlatform.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Sprites/Tiles/Additional.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Props/FallingPlatform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Props/Laser.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/Tiles/Walls_Block.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Tiles/Additional.png" type="Texture" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=17]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -71,7 +72,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
 [sub_resource type="TileSet" id=16]
 0/name = "Walls_Block.png 0"
-0/texture = ExtResource( 1 )
+0/texture = ExtResource( 5 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 64, 64 )
@@ -92,7 +93,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 1/name = "Walls_Block.png 1"
-1/texture = ExtResource( 1 )
+1/texture = ExtResource( 5 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 64, 0, 64, 64 )
@@ -113,7 +114,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 1/z_index = 0
 2/name = "Walls_Block.png 2"
-2/texture = ExtResource( 1 )
+2/texture = ExtResource( 5 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 128, 0, 64, 64 )
@@ -134,7 +135,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 2/z_index = 0
 3/name = "Walls_Block.png 3"
-3/texture = ExtResource( 1 )
+3/texture = ExtResource( 5 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 192, 0, 64, 64 )
@@ -155,7 +156,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 3/z_index = 0
 4/name = "Walls_Block.png 4"
-4/texture = ExtResource( 1 )
+4/texture = ExtResource( 5 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 256, 0, 64, 64 )
@@ -176,7 +177,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 4/z_index = 0
 5/name = "Walls_Block.png 5"
-5/texture = ExtResource( 1 )
+5/texture = ExtResource( 5 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 320, 0, 64, 64 )
@@ -197,7 +198,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 5/z_index = 0
 6/name = "Walls_Block.png 6"
-6/texture = ExtResource( 1 )
+6/texture = ExtResource( 5 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 64, 64, 64 )
@@ -218,7 +219,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 6/z_index = 0
 7/name = "Walls_Block.png 7"
-7/texture = ExtResource( 1 )
+7/texture = ExtResource( 5 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 128, 64, 64 )
@@ -239,7 +240,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 7/z_index = 0
 8/name = "Walls_Block.png 8"
-8/texture = ExtResource( 1 )
+8/texture = ExtResource( 5 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 64, 64, 64, 64 )
@@ -260,7 +261,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 8/z_index = 0
 9/name = "Walls_Block.png 9"
-9/texture = ExtResource( 1 )
+9/texture = ExtResource( 5 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 128, 64, 64, 64 )
@@ -281,7 +282,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 9/z_index = 0
 10/name = "Walls_Block.png 10"
-10/texture = ExtResource( 1 )
+10/texture = ExtResource( 5 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 192, 64, 64, 64 )
@@ -302,7 +303,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 10/z_index = 0
 11/name = "Walls_Block.png 11"
-11/texture = ExtResource( 1 )
+11/texture = ExtResource( 5 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 256, 64, 64, 64 )
@@ -323,7 +324,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 11/z_index = 0
 12/name = "Walls_Block.png 12"
-12/texture = ExtResource( 1 )
+12/texture = ExtResource( 5 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 320, 64, 64, 64 )
@@ -344,7 +345,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 12/z_index = 0
 13/name = "Walls_Block.png 13"
-13/texture = ExtResource( 1 )
+13/texture = ExtResource( 5 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 128, 128, 64, 64 )
@@ -358,7 +359,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 13/shapes = [  ]
 13/z_index = 0
 14/name = "Walls_Block.png 14"
-14/texture = ExtResource( 1 )
+14/texture = ExtResource( 5 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 64, 128, 64, 64 )
@@ -379,7 +380,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 14/z_index = 0
 15/name = "Walls_Block.png 15"
-15/texture = ExtResource( 1 )
+15/texture = ExtResource( 5 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 192, 128, 64, 64 )
@@ -393,7 +394,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 15/shapes = [  ]
 15/z_index = 0
 16/name = "Walls_Block.png 16"
-16/texture = ExtResource( 1 )
+16/texture = ExtResource( 5 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 256, 128, 64, 64 )
@@ -407,7 +408,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 16/shapes = [  ]
 16/z_index = 0
 17/name = "Walls_Block.png 17"
-17/texture = ExtResource( 1 )
+17/texture = ExtResource( 5 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 320, 128, 64, 64 )
@@ -421,7 +422,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 17/shapes = [  ]
 17/z_index = 0
 18/name = "Walls_Block.png 18"
-18/texture = ExtResource( 1 )
+18/texture = ExtResource( 5 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 0, 192, 64, 64 )
@@ -435,7 +436,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 18/shapes = [  ]
 18/z_index = 0
 19/name = "Walls_Block.png 19"
-19/texture = ExtResource( 1 )
+19/texture = ExtResource( 5 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 0, 256, 64, 64 )
@@ -449,7 +450,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 19/shapes = [  ]
 19/z_index = 0
 20/name = "Walls_Block.png 20"
-20/texture = ExtResource( 1 )
+20/texture = ExtResource( 5 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
 20/region = Rect2( 64, 256, 64, 64 )
@@ -463,7 +464,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 20/shapes = [  ]
 20/z_index = 0
 21/name = "Walls_Block.png 21"
-21/texture = ExtResource( 1 )
+21/texture = ExtResource( 5 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
 21/region = Rect2( 64, 192, 64, 64 )
@@ -477,7 +478,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 21/shapes = [  ]
 21/z_index = 0
 22/name = "Walls_Block.png 22"
-22/texture = ExtResource( 1 )
+22/texture = ExtResource( 5 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
 22/region = Rect2( 128, 192, 64, 64 )
@@ -491,7 +492,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 22/shapes = [  ]
 22/z_index = 0
 23/name = "Walls_Block.png 23"
-23/texture = ExtResource( 1 )
+23/texture = ExtResource( 5 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
 23/region = Rect2( 128, 256, 64, 64 )
@@ -505,7 +506,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 23/shapes = [  ]
 23/z_index = 0
 24/name = "Walls_Block.png 24"
-24/texture = ExtResource( 1 )
+24/texture = ExtResource( 5 )
 24/tex_offset = Vector2( 0, 0 )
 24/modulate = Color( 1, 1, 1, 1 )
 24/region = Rect2( 192, 256, 64, 64 )
@@ -519,7 +520,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 24/shapes = [  ]
 24/z_index = 0
 25/name = "Walls_Block.png 25"
-25/texture = ExtResource( 1 )
+25/texture = ExtResource( 5 )
 25/tex_offset = Vector2( 0, 0 )
 25/modulate = Color( 1, 1, 1, 1 )
 25/region = Rect2( 192, 192, 64, 64 )
@@ -533,7 +534,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 25/shapes = [  ]
 25/z_index = 0
 26/name = "Walls_Block.png 26"
-26/texture = ExtResource( 1 )
+26/texture = ExtResource( 5 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
 26/region = Rect2( 256, 192, 64, 64 )
@@ -547,7 +548,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 26/shapes = [  ]
 26/z_index = 0
 27/name = "Walls_Block.png 27"
-27/texture = ExtResource( 1 )
+27/texture = ExtResource( 5 )
 27/tex_offset = Vector2( 0, 0 )
 27/modulate = Color( 1, 1, 1, 1 )
 27/region = Rect2( 320, 192, 64, 64 )
@@ -561,7 +562,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 27/shapes = [  ]
 27/z_index = 0
 28/name = "Walls_Block.png 28"
-28/texture = ExtResource( 1 )
+28/texture = ExtResource( 5 )
 28/tex_offset = Vector2( 0, 0 )
 28/modulate = Color( 1, 1, 1, 1 )
 28/region = Rect2( 256, 256, 64, 64 )
@@ -575,7 +576,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 28/shapes = [  ]
 28/z_index = 0
 29/name = "Walls_Block.png 29"
-29/texture = ExtResource( 1 )
+29/texture = ExtResource( 5 )
 29/tex_offset = Vector2( 0, 0 )
 29/modulate = Color( 1, 1, 1, 1 )
 29/region = Rect2( 320, 256, 64, 64 )
@@ -589,7 +590,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 29/shapes = [  ]
 29/z_index = 0
 30/name = "Additional.png 30"
-30/texture = ExtResource( 5 )
+30/texture = ExtResource( 6 )
 30/tex_offset = Vector2( 0, 0 )
 30/modulate = Color( 1, 1, 1, 1 )
 30/region = Rect2( 0, 0, 64, 64 )
@@ -610,7 +611,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 30/z_index = 0
 31/name = "Additional.png 31"
-31/texture = ExtResource( 5 )
+31/texture = ExtResource( 6 )
 31/tex_offset = Vector2( 0, 0 )
 31/modulate = Color( 1, 1, 1, 1 )
 31/region = Rect2( 64, 0, 64, 64 )
@@ -631,7 +632,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 31/z_index = 0
 32/name = "Additional.png 32"
-32/texture = ExtResource( 5 )
+32/texture = ExtResource( 6 )
 32/tex_offset = Vector2( 0, 0 )
 32/modulate = Color( 1, 1, 1, 1 )
 32/region = Rect2( 128, 0, 64, 64 )
@@ -652,7 +653,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 32/z_index = 0
 33/name = "Additional.png 33"
-33/texture = ExtResource( 5 )
+33/texture = ExtResource( 6 )
 33/tex_offset = Vector2( 0, 0 )
 33/modulate = Color( 1, 1, 1, 1 )
 33/region = Rect2( 192, 0, 64, 64 )
@@ -673,7 +674,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 33/z_index = 0
 34/name = "Additional.png 34"
-34/texture = ExtResource( 5 )
+34/texture = ExtResource( 6 )
 34/tex_offset = Vector2( 0, 0 )
 34/modulate = Color( 1, 1, 1, 1 )
 34/region = Rect2( 256, 0, 64, 64 )
@@ -694,7 +695,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 34/z_index = 0
 35/name = "Additional.png 35"
-35/texture = ExtResource( 5 )
+35/texture = ExtResource( 6 )
 35/tex_offset = Vector2( 0, 0 )
 35/modulate = Color( 1, 1, 1, 1 )
 35/region = Rect2( 320, 0, 64, 64 )
@@ -715,7 +716,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 35/z_index = 0
 36/name = "Additional.png 36"
-36/texture = ExtResource( 5 )
+36/texture = ExtResource( 6 )
 36/tex_offset = Vector2( 0, 0 )
 36/modulate = Color( 1, 1, 1, 1 )
 36/region = Rect2( 384, 0, 64, 64 )
@@ -739,378 +740,14 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [node name="Level20" type="Node2D"]
 
 [node name="Exit" parent="." instance=ExtResource( 2 )]
-position = Vector2( 505, 849 )
-scale = Vector2( 50, 10 )
-z_index = -1
-_levelName = "4-5 Crystal Palace"
-
-[node name="Entrance" parent="." instance=ExtResource( 3 )]
-position = Vector2( 511, 73 )
+position = Vector2( 938, 506 )
 scale = Vector2( 1, 1 )
-
-[node name="FallingPlatform" parent="." instance=ExtResource( 4 )]
-position = Vector2( 61, 215 )
-
-[node name="FallingPlatform2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 125, 215 )
-
-[node name="FallingPlatform3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 189, 215 )
-
-[node name="FallingPlatform4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 253, 215 )
-
-[node name="FallingPlatform5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 317, 215 )
-
-[node name="FallingPlatform6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 381, 215 )
-
-[node name="FallingPlatform7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 445, 215 )
-
-[node name="FallingPlatform8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 509, 215 )
-
-[node name="FallingPlatform9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 573, 215 )
-
-[node name="FallingPlatform10" parent="." instance=ExtResource( 4 )]
-position = Vector2( 637, 215 )
-
-[node name="FallingPlatform11" parent="." instance=ExtResource( 4 )]
-position = Vector2( 701, 215 )
-
-[node name="FallingPlatform12" parent="." instance=ExtResource( 4 )]
-position = Vector2( 765, 215 )
-
-[node name="FallingPlatform13" parent="." instance=ExtResource( 4 )]
-position = Vector2( 830, 215 )
-
-[node name="FallingPlatform14" parent="." instance=ExtResource( 4 )]
-position = Vector2( 894, 215 )
-
-[node name="FallingPlatform15" parent="." instance=ExtResource( 4 )]
-position = Vector2( 958, 215 )
-
-[node name="FallingPlatform108" parent="." instance=ExtResource( 4 )]
-position = Vector2( 61, 151 )
-
-[node name="FallingPlatform109" parent="." instance=ExtResource( 4 )]
-position = Vector2( 125, 151 )
-
-[node name="FallingPlatform110" parent="." instance=ExtResource( 4 )]
-position = Vector2( 189, 151 )
-
-[node name="FallingPlatform111" parent="." instance=ExtResource( 4 )]
-position = Vector2( 253, 151 )
-
-[node name="FallingPlatform112" parent="." instance=ExtResource( 4 )]
-position = Vector2( 317, 151 )
-
-[node name="FallingPlatform113" parent="." instance=ExtResource( 4 )]
-position = Vector2( 381, 151 )
-
-[node name="FallingPlatform114" parent="." instance=ExtResource( 4 )]
-position = Vector2( 445, 151 )
-
-[node name="FallingPlatform115" parent="." instance=ExtResource( 4 )]
-position = Vector2( 509, 151 )
-
-[node name="FallingPlatform116" parent="." instance=ExtResource( 4 )]
-position = Vector2( 573, 151 )
-
-[node name="FallingPlatform117" parent="." instance=ExtResource( 4 )]
-position = Vector2( 637, 151 )
-
-[node name="FallingPlatform118" parent="." instance=ExtResource( 4 )]
-position = Vector2( 701, 151 )
-
-[node name="FallingPlatform119" parent="." instance=ExtResource( 4 )]
-position = Vector2( 765, 151 )
-
-[node name="FallingPlatform120" parent="." instance=ExtResource( 4 )]
-position = Vector2( 830, 151 )
-
-[node name="FallingPlatform121" parent="." instance=ExtResource( 4 )]
-position = Vector2( 894, 151 )
-
-[node name="FallingPlatform122" parent="." instance=ExtResource( 4 )]
-position = Vector2( 958, 151 )
-
-[node name="FallingPlatform16" parent="." instance=ExtResource( 4 )]
-position = Vector2( 61, 279 )
-
-[node name="FallingPlatform17" parent="." instance=ExtResource( 4 )]
-position = Vector2( 125, 279 )
-
-[node name="FallingPlatform18" parent="." instance=ExtResource( 4 )]
-position = Vector2( 189, 279 )
-
-[node name="FallingPlatform19" parent="." instance=ExtResource( 4 )]
-position = Vector2( 253, 279 )
-
-[node name="FallingPlatform20" parent="." instance=ExtResource( 4 )]
-position = Vector2( 317, 279 )
-
-[node name="FallingPlatform21" parent="." instance=ExtResource( 4 )]
-position = Vector2( 381, 279 )
-
-[node name="FallingPlatform22" parent="." instance=ExtResource( 4 )]
-position = Vector2( 445, 279 )
-
-[node name="FallingPlatform23" parent="." instance=ExtResource( 4 )]
-position = Vector2( 509, 279 )
-
-[node name="FallingPlatform24" parent="." instance=ExtResource( 4 )]
-position = Vector2( 573, 279 )
-
-[node name="FallingPlatform25" parent="." instance=ExtResource( 4 )]
-position = Vector2( 637, 279 )
-
-[node name="FallingPlatform26" parent="." instance=ExtResource( 4 )]
-position = Vector2( 701, 279 )
-
-[node name="FallingPlatform27" parent="." instance=ExtResource( 4 )]
-position = Vector2( 765, 279 )
-
-[node name="FallingPlatform28" parent="." instance=ExtResource( 4 )]
-position = Vector2( 830, 279 )
-
-[node name="FallingPlatform29" parent="." instance=ExtResource( 4 )]
-position = Vector2( 894, 279 )
-
-[node name="FallingPlatform30" parent="." instance=ExtResource( 4 )]
-position = Vector2( 958, 279 )
-
-[node name="FallingPlatform31" parent="." instance=ExtResource( 4 )]
-position = Vector2( 61, 343 )
-
-[node name="FallingPlatform32" parent="." instance=ExtResource( 4 )]
-position = Vector2( 125, 343 )
-
-[node name="FallingPlatform33" parent="." instance=ExtResource( 4 )]
-position = Vector2( 189, 343 )
-
-[node name="FallingPlatform34" parent="." instance=ExtResource( 4 )]
-position = Vector2( 253, 343 )
-
-[node name="FallingPlatform35" parent="." instance=ExtResource( 4 )]
-position = Vector2( 317, 343 )
-
-[node name="FallingPlatform36" parent="." instance=ExtResource( 4 )]
-position = Vector2( 381, 343 )
-
-[node name="FallingPlatform37" parent="." instance=ExtResource( 4 )]
-position = Vector2( 445, 343 )
-
-[node name="FallingPlatform38" parent="." instance=ExtResource( 4 )]
-position = Vector2( 509, 343 )
-
-[node name="FallingPlatform39" parent="." instance=ExtResource( 4 )]
-position = Vector2( 573, 343 )
-
-[node name="FallingPlatform40" parent="." instance=ExtResource( 4 )]
-position = Vector2( 637, 343 )
-
-[node name="FallingPlatform41" parent="." instance=ExtResource( 4 )]
-position = Vector2( 701, 343 )
-
-[node name="FallingPlatform42" parent="." instance=ExtResource( 4 )]
-position = Vector2( 765, 343 )
-
-[node name="FallingPlatform43" parent="." instance=ExtResource( 4 )]
-position = Vector2( 830, 343 )
-
-[node name="FallingPlatform44" parent="." instance=ExtResource( 4 )]
-position = Vector2( 894, 343 )
-
-[node name="FallingPlatform45" parent="." instance=ExtResource( 4 )]
-position = Vector2( 958, 343 )
-
-[node name="FallingPlatform46" parent="." instance=ExtResource( 4 )]
-position = Vector2( 61, 407 )
-
-[node name="FallingPlatform47" parent="." instance=ExtResource( 4 )]
-position = Vector2( 125, 407 )
-
-[node name="FallingPlatform48" parent="." instance=ExtResource( 4 )]
-position = Vector2( 189, 407 )
-
-[node name="FallingPlatform49" parent="." instance=ExtResource( 4 )]
-position = Vector2( 253, 407 )
-
-[node name="FallingPlatform50" parent="." instance=ExtResource( 4 )]
-position = Vector2( 317, 407 )
-
-[node name="FallingPlatform51" parent="." instance=ExtResource( 4 )]
-position = Vector2( 381, 407 )
-
-[node name="FallingPlatform52" parent="." instance=ExtResource( 4 )]
-position = Vector2( 445, 407 )
-
-[node name="FallingPlatform53" parent="." instance=ExtResource( 4 )]
-position = Vector2( 509, 407 )
-
-[node name="FallingPlatform54" parent="." instance=ExtResource( 4 )]
-position = Vector2( 573, 407 )
-
-[node name="FallingPlatform55" parent="." instance=ExtResource( 4 )]
-position = Vector2( 637, 407 )
-
-[node name="FallingPlatform56" parent="." instance=ExtResource( 4 )]
-position = Vector2( 701, 407 )
-
-[node name="FallingPlatform57" parent="." instance=ExtResource( 4 )]
-position = Vector2( 765, 407 )
-
-[node name="FallingPlatform58" parent="." instance=ExtResource( 4 )]
-position = Vector2( 830, 407 )
-
-[node name="FallingPlatform59" parent="." instance=ExtResource( 4 )]
-position = Vector2( 894, 407 )
-
-[node name="FallingPlatform60" parent="." instance=ExtResource( 4 )]
-position = Vector2( 958, 407 )
-
-[node name="FallingPlatform61" parent="." instance=ExtResource( 4 )]
-position = Vector2( 61, 471 )
-
-[node name="FallingPlatform62" parent="." instance=ExtResource( 4 )]
-position = Vector2( 125, 471 )
-
-[node name="FallingPlatform63" parent="." instance=ExtResource( 4 )]
-position = Vector2( 189, 471 )
-
-[node name="FallingPlatform64" parent="." instance=ExtResource( 4 )]
-position = Vector2( 253, 471 )
-
-[node name="FallingPlatform65" parent="." instance=ExtResource( 4 )]
-position = Vector2( 317, 471 )
-
-[node name="FallingPlatform66" parent="." instance=ExtResource( 4 )]
-position = Vector2( 381, 471 )
-
-[node name="FallingPlatform67" parent="." instance=ExtResource( 4 )]
-position = Vector2( 445, 471 )
-
-[node name="FallingPlatform68" parent="." instance=ExtResource( 4 )]
-position = Vector2( 509, 471 )
-
-[node name="FallingPlatform69" parent="." instance=ExtResource( 4 )]
-position = Vector2( 573, 471 )
-
-[node name="FallingPlatform70" parent="." instance=ExtResource( 4 )]
-position = Vector2( 637, 471 )
-
-[node name="FallingPlatform71" parent="." instance=ExtResource( 4 )]
-position = Vector2( 701, 471 )
-
-[node name="FallingPlatform72" parent="." instance=ExtResource( 4 )]
-position = Vector2( 765, 471 )
-
-[node name="FallingPlatform73" parent="." instance=ExtResource( 4 )]
-position = Vector2( 830, 471 )
-
-[node name="FallingPlatform74" parent="." instance=ExtResource( 4 )]
-position = Vector2( 894, 471 )
-
-[node name="FallingPlatform75" parent="." instance=ExtResource( 4 )]
-position = Vector2( 958, 471 )
-
-[node name="FallingPlatform76" parent="." instance=ExtResource( 4 )]
-position = Vector2( 61, 535 )
-
-[node name="FallingPlatform77" parent="." instance=ExtResource( 4 )]
-position = Vector2( 125, 535 )
-
-[node name="FallingPlatform78" parent="." instance=ExtResource( 4 )]
-position = Vector2( 189, 535 )
-
-[node name="FallingPlatform79" parent="." instance=ExtResource( 4 )]
-position = Vector2( 253, 535 )
-
-[node name="FallingPlatform80" parent="." instance=ExtResource( 4 )]
-position = Vector2( 317, 535 )
-
-[node name="FallingPlatform81" parent="." instance=ExtResource( 4 )]
-position = Vector2( 381, 535 )
-
-[node name="FallingPlatform82" parent="." instance=ExtResource( 4 )]
-position = Vector2( 445, 535 )
-
-[node name="FallingPlatform83" parent="." instance=ExtResource( 4 )]
-position = Vector2( 509, 535 )
-
-[node name="FallingPlatform84" parent="." instance=ExtResource( 4 )]
-position = Vector2( 573, 535 )
-
-[node name="FallingPlatform85" parent="." instance=ExtResource( 4 )]
-position = Vector2( 637, 535 )
-
-[node name="FallingPlatform86" parent="." instance=ExtResource( 4 )]
-position = Vector2( 701, 535 )
-
-[node name="FallingPlatform87" parent="." instance=ExtResource( 4 )]
-position = Vector2( 765, 535 )
-
-[node name="FallingPlatform88" parent="." instance=ExtResource( 4 )]
-position = Vector2( 830, 535 )
-
-[node name="FallingPlatform89" parent="." instance=ExtResource( 4 )]
-position = Vector2( 894, 535 )
-
-[node name="FallingPlatform90" parent="." instance=ExtResource( 4 )]
-position = Vector2( 958, 535 )
-
-[node name="FallingPlatform91" parent="." instance=ExtResource( 4 )]
-position = Vector2( 61, 599 )
-
-[node name="FallingPlatform92" parent="." instance=ExtResource( 4 )]
-position = Vector2( 125, 599 )
-
-[node name="FallingPlatform93" parent="." instance=ExtResource( 4 )]
-position = Vector2( 189, 599 )
-
-[node name="FallingPlatform94" parent="." instance=ExtResource( 4 )]
-position = Vector2( 253, 599 )
-
-[node name="FallingPlatform95" parent="." instance=ExtResource( 4 )]
-position = Vector2( 317, 599 )
-
-[node name="FallingPlatform96" parent="." instance=ExtResource( 4 )]
-position = Vector2( 381, 599 )
-
-[node name="FallingPlatform97" parent="." instance=ExtResource( 4 )]
-position = Vector2( 445, 599 )
-
-[node name="FallingPlatform98" parent="." instance=ExtResource( 4 )]
-position = Vector2( 509, 599 )
-
-[node name="FallingPlatform99" parent="." instance=ExtResource( 4 )]
-position = Vector2( 573, 599 )
-
-[node name="FallingPlatform100" parent="." instance=ExtResource( 4 )]
-position = Vector2( 637, 599 )
-
-[node name="FallingPlatform101" parent="." instance=ExtResource( 4 )]
-position = Vector2( 701, 599 )
-
-[node name="FallingPlatform102" parent="." instance=ExtResource( 4 )]
-position = Vector2( 765, 599 )
-
-[node name="FallingPlatform103" parent="." instance=ExtResource( 4 )]
-position = Vector2( 830, 599 )
-
-[node name="FallingPlatform104" parent="." instance=ExtResource( 4 )]
-position = Vector2( 894, 599 )
-
-[node name="FallingPlatform105" parent="." instance=ExtResource( 4 )]
-position = Vector2( 958, 599 )
-
-[node name="FallingPlatform106" parent="." instance=ExtResource( 4 )]
-position = Vector2( 526, 669 )
-scale = Vector2( 50, 1 )
+z_index = -1
+_levelName = "4-1 Spelunking II"
+
+[node name="Entrance" parent="." instance=ExtResource( 1 )]
+position = Vector2( 86, 98 )
+scale = Vector2( 1, 1 )
 
 [node name="CloseToCamera" type="TileMap" parent="."]
 position = Vector2( 510, 300 )
@@ -1125,7 +762,7 @@ scale = Vector2( 0.8, 0.8 )
 z_index = 1
 tile_set = SubResource( 16 )
 format = 1
-tile_data = PoolIntArray( -327690, 0, 0, -327689, 0, 0, -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -262154, 0, 0, -262153, 24, 0, -327672, 19, 0, -327671, 0, 0, -196618, 0, 0, -262135, 0, 0, -131082, 0, 0, -196599, 0, 0, -65546, 0, 0, -131063, 0, 0, -10, 0, 0, -65527, 0, 0, 65526, 0, 0, 9, 0, 0, 131062, 0, 0, 65545, 0, 0, 196598, 0, 0, 131081, 0, 0, 262134, 0, 0, 196617, 0, 0, 327670, 0, 0, 262153, 0, 0, 393206, 0, 0, 327689, 0, 0, 458742, 0, 0, 393225, 0, 0, 524278, 0, 0, 458761, 0, 0, 589814, 0, 0, 524297, 0, 0, 655350, 0, 0, 589833, 0, 0, 720886, 0, 0, 655369, 0, 0, 786422, 0, 0, 720905, 0, 0, 851958, 0, 0, 786441, 0, 0, 917494, 0, 0, 851977, 0, 0, 983030, 0, 0, 917513, 0, 0, 1048566, 0, 0, 983049, 0, 0, 1114102, 0, 0, 1048585, 0, 0, 1179638, 0, 0, 1114121, 0, 0, 1245174, 0, 0, 1245175, 0, 0, 1245176, 0, 0, 1245177, 0, 0, 1245178, 0, 0, 1245179, 0, 0, 1245180, 0, 0, 1245181, 0, 0, 1245182, 0, 0, 1245183, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 4849655, 0, 0, 4849656, 0, 0, 4849657, 0, 0, 4849658, 0, 0, 4849659, 0, 0, 4849660, 0, 0, 4849661, 0, 0, 4849662, 0, 0, 4849663, 0, 0, 4784128, 0, 0, 4784129, 0, 0, 4784130, 0, 0, 4784131, 0, 0, 4784132, 0, 0, 4784133, 0, 0, 4784134, 0, 0, 4784135, 0, 0, 4784136, 0, 0, 4784137, 0, 0 )
+tile_data = PoolIntArray( -327690, 0, 0, -327689, 0, 0, -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -262154, 0, 0, -262153, 24, 0, -262151, 19, 0, -262150, 8, 0, -262149, 24, 0, -262147, 19, 0, -262146, 8, 0, -262145, 24, 0, -327680, 19, 0, -327679, 8, 0, -327678, 24, 0, -327676, 19, 0, -327675, 8, 0, -327674, 24, 0, -327672, 19, 0, -327671, 0, 0, -196618, 0, 0, -196617, 23, 0, -262136, 20, 0, -262135, 0, 0, -131082, 0, 0, -131081, 0, 0, -131080, 0, 0, -131079, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131073, 0, 0, -196608, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196600, 0, 0, -196599, 0, 0, -65546, 0, 0, -65545, 0, 0, -65544, 0, 0, -65543, 0, 0, -65542, 23, 0, -65540, 19, 0, -65539, 0, 0, -65538, 23, 0, -65537, 22, 0, -131072, 0, 0, -131071, 23, 0, -131070, 22, 0, -131069, 0, 0, -131068, 0, 0, -131067, 24, 0, -131064, 22, 0, -131063, 0, 0, -10, 0, 0, -9, 0, 0, -8, 0, 0, -7, 0, 0, -6, 0, 0, -5, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, 65526, 0, 0, 65527, 26, 0, 65532, 20, 0, 65533, 0, 0, 65534, 26, 0, 8, 22, 0, 9, 0, 0, 131062, 0, 0, 131063, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 65536, 0, 0, 65537, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 196598, 0, 0, 196599, 26, 0, 196602, 22, 0, 196603, 0, 0, 196604, 26, 0, 131072, 22, 0, 131073, 0, 0, 131074, 23, 0, 131077, 22, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 262134, 0, 0, 262135, 0, 0, 262136, 0, 0, 262137, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 2, 0, 196615, 24, 0, 196616, 19, 0, 196617, 0, 0, 327670, 0, 0, 327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 26, 0, 262152, 20, 0, 262153, 0, 0, 393206, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0 )
 
 [node name="Background1" type="TileMap" parent="."]
 position = Vector2( 510, 300 )
@@ -1148,3 +785,49 @@ z_index = -2
 tile_set = SubResource( 16 )
 format = 1
 tile_data = PoolIntArray( -393227, 13, 0, -393226, 13, 0, -393225, 13, 0, -393224, 13, 0, -393223, 13, 0, -393222, 13, 0, -393221, 13, 0, -393220, 13, 0, -393219, 13, 0, -393218, 13, 0, -393217, 13, 0, -458752, 13, 0, -458751, 13, 0, -458750, 13, 0, -458749, 13, 0, -458748, 13, 0, -458747, 13, 0, -458746, 13, 0, -458745, 13, 0, -458744, 13, 0, -458743, 13, 0, -458742, 13, 0, -327691, 13, 0, -327690, 13, 0, -327689, 13, 0, -327688, 13, 0, -327687, 13, 0, -327686, 13, 0, -327685, 13, 0, -327684, 13, 0, -327683, 13, 0, -327682, 13, 0, -327681, 13, 0, -393216, 13, 0, -393215, 13, 0, -393214, 13, 0, -393213, 13, 0, -393212, 13, 0, -393211, 13, 0, -393210, 13, 0, -393209, 13, 0, -393208, 13, 0, -393207, 13, 0, -393206, 13, 0, -262155, 13, 0, -262154, 13, 0, -262153, 13, 0, -262152, 13, 0, -262151, 13, 0, -262150, 13, 0, -262149, 13, 0, -262148, 13, 0, -262147, 13, 0, -262146, 13, 0, -262145, 13, 0, -327680, 13, 0, -327679, 13, 0, -327678, 13, 0, -327677, 13, 0, -327676, 13, 0, -327675, 13, 0, -327674, 13, 0, -327673, 13, 0, -327672, 13, 0, -327671, 13, 0, -327670, 13, 0, -196619, 13, 0, -196618, 13, 0, -196617, 13, 0, -196616, 13, 0, -196615, 13, 0, -196614, 13, 0, -196613, 13, 0, -196612, 13, 0, -196611, 13, 0, -196610, 13, 0, -196609, 13, 0, -262144, 13, 0, -262143, 13, 0, -262142, 13, 0, -262141, 13, 0, -262140, 13, 0, -262139, 13, 0, -262138, 13, 0, -262137, 13, 0, -262136, 13, 0, -262135, 13, 0, -262134, 13, 0, -131083, 13, 0, -131082, 13, 0, -131081, 13, 0, -131080, 13, 0, -131079, 13, 0, -131078, 13, 0, -131077, 13, 0, -131076, 13, 0, -131075, 13, 0, -131074, 13, 0, -131073, 13, 0, -196608, 13, 0, -196607, 13, 0, -196606, 13, 0, -196605, 13, 0, -196604, 13, 0, -196603, 13, 0, -196602, 13, 0, -196601, 13, 0, -196600, 13, 0, -196599, 13, 0, -196598, 13, 0, -65547, 13, 0, -65546, 13, 0, -65545, 13, 0, -65544, 13, 0, -65543, 13, 0, -65542, 13, 0, -65541, 13, 0, -65540, 13, 0, -65539, 13, 0, -65538, 13, 0, -65537, 13, 0, -131072, 13, 0, -131071, 13, 0, -131070, 13, 0, -131069, 13, 0, -131068, 13, 0, -131067, 13, 0, -131066, 13, 0, -131065, 13, 0, -131064, 13, 0, -131063, 13, 0, -131062, 13, 0, -11, 13, 0, -10, 13, 0, -9, 13, 0, -8, 13, 0, -7, 13, 0, -6, 13, 0, -5, 13, 0, -4, 13, 0, -3, 13, 0, -2, 13, 0, -1, 13, 0, -65536, 13, 0, -65535, 13, 0, -65534, 13, 0, -65533, 13, 0, -65532, 13, 0, -65531, 13, 0, -65530, 13, 0, -65529, 13, 0, -65528, 13, 0, -65527, 13, 0, -65526, 13, 0, 65525, 13, 0, 65526, 13, 0, 65527, 13, 0, 65528, 13, 0, 65529, 13, 0, 65530, 13, 0, 65531, 13, 0, 65532, 13, 0, 65533, 13, 0, 65534, 13, 0, 65535, 13, 0, 0, 13, 0, 1, 13, 0, 2, 13, 0, 3, 13, 0, 4, 13, 0, 5, 13, 0, 6, 13, 0, 7, 13, 0, 8, 13, 0, 9, 13, 0, 10, 13, 0, 131061, 13, 0, 131062, 13, 0, 131063, 13, 0, 131064, 13, 0, 131065, 13, 0, 131066, 13, 0, 131067, 13, 0, 131068, 13, 0, 131069, 13, 0, 131070, 13, 0, 131071, 13, 0, 65536, 13, 0, 65537, 13, 0, 65538, 13, 0, 65539, 13, 0, 65540, 13, 0, 65541, 13, 0, 65542, 13, 0, 65543, 13, 0, 65544, 13, 0, 65545, 13, 0, 65546, 13, 0, 196597, 13, 0, 196598, 13, 0, 196599, 13, 0, 196600, 13, 0, 196601, 13, 0, 196602, 13, 0, 196603, 13, 0, 196604, 13, 0, 196605, 13, 0, 196606, 13, 0, 196607, 13, 0, 131072, 13, 0, 131073, 13, 0, 131074, 13, 0, 131075, 13, 0, 131076, 13, 0, 131077, 13, 0, 131078, 13, 0, 131079, 13, 0, 131080, 13, 0, 131081, 13, 0, 131082, 13, 0, 262133, 13, 0, 262134, 13, 0, 262135, 13, 0, 262136, 13, 0, 262137, 13, 0, 262138, 13, 0, 262139, 13, 0, 262140, 13, 0, 262141, 13, 0, 262142, 13, 0, 262143, 13, 0, 196608, 13, 0, 196609, 13, 0, 196610, 13, 0, 196611, 13, 0, 196612, 13, 0, 196613, 13, 0, 196614, 13, 0, 196615, 13, 0, 196616, 13, 0, 196617, 13, 0, 196618, 13, 0, 327669, 13, 0, 327670, 13, 0, 327671, 13, 0, 327672, 13, 0, 327673, 13, 0, 327674, 13, 0, 327675, 13, 0, 327676, 13, 0, 327677, 13, 0, 327678, 13, 0, 327679, 13, 0, 262144, 13, 0, 262145, 13, 0, 262146, 13, 0, 262147, 13, 0, 262148, 13, 0, 262149, 13, 0, 262150, 13, 0, 262151, 13, 0, 262152, 13, 0, 262153, 13, 0, 262154, 13, 0, 393205, 13, 0, 393206, 13, 0, 393207, 13, 0, 393208, 13, 0, 393209, 13, 0, 393210, 13, 0, 393211, 13, 0, 393212, 13, 0, 393213, 13, 0, 393214, 13, 0, 393215, 13, 0, 327680, 13, 0, 327681, 13, 0, 327682, 13, 0, 327683, 13, 0, 327684, 13, 0, 327685, 13, 0, 327686, 13, 0, 327687, 13, 0, 327688, 13, 0, 327689, 13, 0, 327690, 13, 0, 458741, 13, 0, 458742, 13, 0, 458743, 13, 0, 458744, 13, 0, 458745, 13, 0, 458746, 13, 0, 458747, 13, 0, 458748, 13, 0, 458749, 13, 0, 458750, 13, 0, 458751, 13, 0, 393216, 13, 0, 393217, 13, 0, 393218, 13, 0, 393219, 13, 0, 393220, 13, 0, 393221, 13, 0, 393222, 13, 0, 393223, 13, 0, 393224, 13, 0, 393225, 13, 0, 393226, 13, 0 )
+
+[node name="FallingPlatform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 228, 172 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="FallingPlatform2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 433, 172 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="FallingPlatform3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 587, 172 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="FallingPlatform4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 894, 172 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="FallingPlatform5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 792, 275 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="FallingPlatform6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 331, 275 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="FallingPlatform7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 126, 377 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="FallingPlatform8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 485, 377 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="FallingPlatform9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 638, 377 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="FallingPlatform10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 382, 480 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="RedLaser" parent="." instance=ExtResource( 4 )]
+position = Vector2( 618, 428 )
+
+[node name="RedLaser2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 54, 427 )
