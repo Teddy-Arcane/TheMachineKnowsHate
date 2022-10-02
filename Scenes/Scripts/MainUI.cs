@@ -4,12 +4,14 @@ using System;
 public class MainUI : Control
 {
 	private Label _hint;
+	private Label _leveName;
 	
 	//PackedScene _dialog = GD.Load<PackedScene>("res://Scenes/UI/DialogBox.tscn");
 
 	public override void _Ready()
 	{
 		_hint = GetNode<Label>("CanvasLayer/Hint");
+		_leveName = GetNode<Label>("CanvasLayer/LevelName");
 	}
 
 	// public void StartDialog(string dialogPath)
@@ -22,6 +24,11 @@ public class MainUI : Control
 	//
 	// 	script.Start(dialogPath);
 	// }
+
+	public void SetLevelName(string name)
+	{
+		_leveName.Text = name;
+	}
 
 	public void SetHint(string hint)
 	{
