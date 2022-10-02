@@ -15,6 +15,7 @@
 [ext_resource path="res://Sounds/tick.wav" type="AudioStream" id=13]
 
 [node name="AudioPlayer" type="Node2D"]
+position = Vector2( 5, 5 )
 script = ExtResource( 5 )
 
 [node name="Jump1" type="AudioStreamPlayer" parent="."]

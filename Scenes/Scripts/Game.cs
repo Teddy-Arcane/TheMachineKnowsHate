@@ -41,6 +41,7 @@ public class Game : Node
 		var player = GetNode<Player>("Player");
 		player.SetInitialPosition(entrance.Position);
 		player.Position = new Vector2(entrance.Position.x, entrance.Position.y + 23);
+		player.PlayAnimation("idle");
 		
 		_lightFlicker.StartNewLevel();
 	}

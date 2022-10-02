@@ -30,7 +30,7 @@ public class Laser : RayCast2D
 			var hit = GetCollider();
 			var test = hit as KinematicBody2D;
 			if (test != null)
-				_player.Kill();
+				_player.LaserKill();
 			
 			castPoint = ToLocal(GetCollisionPoint());
 		}

@@ -26,9 +26,10 @@ public class Player : KinematicBody2D
 	private Vector2 _lastVelocity;
 	private Timer _deathTimer;
 	private bool _isDead = false;
+	private CollisionShape2D _collider;
 
 	public static bool MovementDisabled = false;
-	
+
 	public override void _Ready()
 	{
 		_initialPosition = Position;
@@ -37,15 +38,17 @@ public class Player : KinematicBody2D
 		_coyoteTimer = GetNode<Timer>("CoyoteTimer");
 		_pointLight = GetNode<Light2D>("Light2D");
 		_audio = GetNode<AudioPlayer>("AudioPlayer");
+		_deathTimer = GetNode<Timer>("DeathTimer");
+		_collider = GetNode<CollisionShape2D>("CollisionShape2D");
 	}
-	
+
 	public override void _PhysicsProcess(float delta)
 	{
 		if (_isDead || MovementDisabled) return;
-		
+
 		if (_velocity.y > 0)
 			_lastVelocity = _velocity;
-		
+
 		_velocity.x = 0;
 
 		HandleMovement();
@@ -59,12 +62,12 @@ public class Player : KinematicBody2D
 		{
 			_coyoteTimer.Start();
 		}
-		
+
 		if (IsOnFloor() && !_jumpBuffer.IsStopped())
 		{
 			DoJump();
 		}
-		
+
 		HandleDirection(_velocity);
 
 		if (_velocity.x == 0)
@@ -89,26 +92,40 @@ public class Player : KinematicBody2D
 		_initialPosition = initPosit;
 	}
 
+	public void LaserKill()
+	{
+		_animator.Play("cinders");
+		_audio.Play("Zap");
+		
+		Kill();
+	}
+
 	public void Kill()
 	{
-		_velocity = Vector2.Zero;;
-		
-		// start death timer
-		_deathTimer = new Timer();;
-		_deathTimer.WaitTime = 2;
-		_deathTimer.OneShot = true;
-		_deathTimer.Autostart = false;
+		_collider.Disabled = true;
+		_velocity = Vector2.Zero;
+
+		MoveAndSlide(_velocity);
+
 		_isDead = true;
-		AddChild(_deathTimer);
-		_deathTimer.Connect("timeout", this, "Respawn");
 		_deathTimer.Start();
 	}
 
-	private void Respawn()
+	public void PlayAnimation(string name)
 	{
-		Position = _initialPosition;
-		_deathTimer.QueueFree();
+		_animator.Play(name);
+	}
+
+	private async void Respawn()
+	{
+		PlayAnimation("idle");
+		Position = new Vector2(_initialPosition.x, _initialPosition.y + 23);
+
+
+		await ToSignal(GetTree(), "idle_frame");
+		
 		_isDead = false;
+		_collider.Disabled = false;
 	}
 
 	// public void TriggerDialog(string path)
@@ -120,22 +137,22 @@ public class Player : KinematicBody2D
 	{
 		var sprinting = Input.IsActionPressed("sprint");
 		var speed = sprinting ? (_speed * _sprintModifier) : _speed;
-		
+
 		if (Input.IsActionPressed("move_right"))
 		{
 			_velocity.x += speed;
 		}
-		else if(Input.IsActionPressed("move_left"))
+		else if (Input.IsActionPressed("move_left"))
 		{
 			_velocity.x -= speed;
 		}
-		
+
 		// if in air, exit
 		if (!_grounded || !IsOnFloor())
 		{
 			_animator.Play("jump");
-		} 
-		
+		}
+
 		// trigger animation
 		_animator.Play((_velocity.x == 0) ? "idle" : "run");
 	}
@@ -160,17 +177,17 @@ public class Player : KinematicBody2D
 			{
 				_audio.Play("Crunch1");
 				_animator.Play("fall");
-				
+
 				Kill();
 			}
 			else if (_lastVelocity.y > _gruntThreshold)
 			{
 				_audio.Play($"Landing{new Random().Next(1, 4)}");
 			}
-				
+
 			_grounded = true;
 			_hasJumped = false;
-			
+
 			//_audio.Play($"Landing{new Random().Next(1, 3)}");
 		}
 
@@ -178,7 +195,7 @@ public class Player : KinematicBody2D
 		{
 			_grounded = false;
 		}
-		
+
 		if (Input.IsActionJustReleased("jump") && _velocity.y < 0)
 		{
 			_velocity.y = 0;
@@ -194,12 +211,12 @@ public class Player : KinematicBody2D
 		_hasJumped = true;
 		_grounded = false;
 	}
-	
+
 	private void HandleGravity(float delta)
 	{
 		_velocity.y += _gravity * delta;
 	}
-	
+
 	private void HandleDirection(Vector2 velocity)
 	{
 		// if idle face last known direction
@@ -220,5 +237,10 @@ public class Player : KinematicBody2D
 			_animator.FlipH = velocity.x < 0;
 			_lastDirection = velocity;
 		}
+	}
+
+	private void _on_DeathTimer_timeout()
+	{
+		Respawn();
 	}
 }
