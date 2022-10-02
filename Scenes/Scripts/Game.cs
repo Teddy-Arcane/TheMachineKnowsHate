@@ -39,8 +39,8 @@ public class Game : Node
 		
 		var entrance = scene.GetNode<Node2D>("Entrance");
 		var player = GetNode<Player>("Player");
-		player.SetInitialPosition(new Vector2(entrance.Position.x, entrance.Position.y + 23));
-		player.Position = new Vector2(entrance.Position.x, entrance.Position.y + 23);
+		player.SetInitialPosition(new Vector2(entrance.Position.x, entrance.Position.y ));
+		player.Position = player.GetSpawnPoint();
 		player.PlayAnimation("idle");
 		player.ZeroVelocity();
 		

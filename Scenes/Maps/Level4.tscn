@@ -575,7 +575,7 @@ z_index = -1
 _levelName = "1-4 Particulate"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
-position = Vector2( 37, 504 )
+position = Vector2( 37, 509 )
 scale = Vector2( 1, 1 )
 
 [node name="CloseToCamera" type="TileMap" parent="."]

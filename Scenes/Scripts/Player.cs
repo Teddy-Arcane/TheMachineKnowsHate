@@ -45,11 +45,11 @@ public class Player : KinematicBody2D
 	public override void _PhysicsProcess(float delta)
 	{
 		if (_isDead || MovementDisabled) return;
-
+		
 		if (_velocity.y > 0)
 			_lastVelocity = _velocity;
 
-		if (_lastVelocity.y > (_fallDamageThresholdVelocity - 200f))
+		if (_lastVelocity.y > (_fallDamageThresholdVelocity))
 		{
 			_audio.Play("Scream");
 		}
@@ -130,16 +130,21 @@ public class Player : KinematicBody2D
 		_animator.Play(name);
 	}
 
+	public Vector2 GetSpawnPoint()
+	{
+		return new Vector2(_initialPosition.x, _initialPosition.y + 25f);
+	}
+
 	private async void Respawn()
 	{
 		_lastVelocity = Vector2.Zero;
 		PlayAnimation("idle");
-		Position = new Vector2(_initialPosition.x, _initialPosition.y + 23);
-
+		Position = GetSpawnPoint();
+		
 		await ToSignal(GetTree(), "idle_frame");
 		
-		_isDead = false;
 		_collider.Disabled = false;
+		_isDead = false;
 	}
 
 	// public void TriggerDialog(string path)

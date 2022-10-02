@@ -577,7 +577,7 @@ z_index = -1
 _levelName = "3-5 Hex Chambers"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
-position = Vector2( 37, 504 )
+position = Vector2( 37, 508 )
 scale = Vector2( 1, 1 )
 
 [node name="BlueLaser" parent="." instance=ExtResource( 5 )]

@@ -576,7 +576,7 @@ z_index = -1
 _levelName = "2-4 Lights Out"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
-position = Vector2( 356, 46 )
+position = Vector2( 357, 47 )
 scale = Vector2( 1, 1 )
 
 [node name="BlueLaser3" parent="." instance=ExtResource( 4 )]
