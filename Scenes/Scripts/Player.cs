@@ -17,9 +17,11 @@ public class Player : KinematicBody2D
 	private Vector2 _initialPosition;
 	private Vector2 _lastDirection;
 	private Timer _jumpBuffer;
+	private Timer _coyoteTimer;
 	private Light2D _pointLight;
 	private Vector2 _velocity = Vector2.Zero;
 	private AudioPlayer _audio;
+	private bool _hasJumped = false;
 
 	public static bool Movement = true;
 	
@@ -28,6 +30,7 @@ public class Player : KinematicBody2D
 		_initialPosition = Position;
 		_animator = GetNode<AnimatedSprite>("AnimatedSprite");
 		_jumpBuffer = GetNode<Timer>("JumpBuffer");
+		_coyoteTimer = GetNode<Timer>("CoyoteTimer");
 		_pointLight = GetNode<Light2D>("Light2D");
 		_audio = GetNode<AudioPlayer>("AudioPlayer");
 	}
@@ -40,7 +43,13 @@ public class Player : KinematicBody2D
 		HandleJump();
 		HandleGravity(delta);
 
+		var wasOnFloor = IsOnFloor();
 		_velocity = MoveAndSlide(_velocity, Vector2.Up);
+
+		if (wasOnFloor && !IsOnFloor())
+		{
+			_coyoteTimer.Start();
+		}
 		
 		if (IsOnFloor() && !_jumpBuffer.IsStopped())
 		{
@@ -109,7 +118,7 @@ public class Player : KinematicBody2D
 	{
 		if (Input.IsActionJustPressed("jump"))
 		{
-			if (IsOnFloor())
+			if (IsOnFloor() || (!_hasJumped && !_coyoteTimer.IsStopped()))
 			{
 				DoJump();
 			}
@@ -121,6 +130,7 @@ public class Player : KinematicBody2D
 		else if (!_grounded && IsOnFloor())
 		{
 			_grounded = true;
+			_hasJumped = false;
 			//_audio.Play($"Landing{new Random().Next(1, 3)}");
 		}
 		
@@ -136,6 +146,7 @@ public class Player : KinematicBody2D
 		_velocity.y -= _jumpVelocity;
 		_animator.Play("jump");
 		//_ui.SetAction("Jumping");
+		_hasJumped = true;
 		_grounded = false;
 	}
 	
