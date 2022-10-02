@@ -735,13 +735,13 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 36/z_index = 0
 
-[node name="Level1" type="Node2D"]
+[node name="Level16" type="Node2D"]
 
 [node name="Exit" parent="." instance=ExtResource( 2 )]
 position = Vector2( 940, 98 )
 scale = Vector2( 1, 1 )
 z_index = -1
-_levelName = "1-1 Stairway"
+_levelName = "4-1 Spelunking II"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
 position = Vector2( 82, 509 )

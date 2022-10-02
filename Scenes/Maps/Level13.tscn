@@ -12,7 +12,7 @@
 position = Vector2( 229, 2 )
 scale = Vector2( 1, 1 )
 z_index = -1
-_levelName = "3-5 Hex Chambers"
+_levelName = "3-3 Hex Chambers"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
 position = Vector2( 37, 508 )
