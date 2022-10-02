@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="LD51_NonBorked"
+config/name="THIS_MACHINE_KNOWS_HATE"
 run/main_scene="res://Scenes/MainMenu.tscn"
 boot_splash/show_image=false
 
