@@ -1,9 +1,12 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Sprites/Tiles/Walls_Block.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Props/Exit.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Props/Entrance.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Props/MovingPlatform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Tiles/Additional.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Props/Laser.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Props/FallingPlatform.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=17]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -738,7 +741,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [node name="Level17" type="Node2D"]
 
 [node name="Exit" parent="." instance=ExtResource( 2 )]
-position = Vector2( 940, 98 )
+position = Vector2( 940, 121 )
 scale = Vector2( 1, 1 )
 z_index = -1
 _levelName = "4-2 Zeppelin"
@@ -746,6 +749,153 @@ _levelName = "4-2 Zeppelin"
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
 position = Vector2( 82, 509 )
 scale = Vector2( 1, 1 )
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 4 )]
+position = Vector2( 50, 65 )
+_moveTo = Vector2( 850, 0 )
+_speed = 0.8
+
+[node name="RedLaser" parent="." instance=ExtResource( 6 )]
+position = Vector2( 60, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 100, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 140, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 180, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 220, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 260, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 300, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 340, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 380, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 420, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 460, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 500, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser13" parent="." instance=ExtResource( 6 )]
+position = Vector2( 540, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser14" parent="." instance=ExtResource( 6 )]
+position = Vector2( 580, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser15" parent="." instance=ExtResource( 6 )]
+position = Vector2( 620, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser16" parent="." instance=ExtResource( 6 )]
+position = Vector2( 660, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser17" parent="." instance=ExtResource( 6 )]
+position = Vector2( 700, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser18" parent="." instance=ExtResource( 6 )]
+position = Vector2( 740, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser19" parent="." instance=ExtResource( 6 )]
+position = Vector2( 780, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser20" parent="." instance=ExtResource( 6 )]
+position = Vector2( 820, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser21" parent="." instance=ExtResource( 6 )]
+position = Vector2( 860, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser22" parent="." instance=ExtResource( 6 )]
+position = Vector2( 900, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser23" parent="." instance=ExtResource( 6 )]
+position = Vector2( 940, 50 )
+rotation = 1.5708
+cast_to = Vector2( 1000, 0 )
+
+[node name="FallingPlatform" parent="." instance=ExtResource( 7 )]
+position = Vector2( 280, 522 )
+
+[node name="FallingPlatform2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 361, 457 )
+
+[node name="FallingPlatform3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 442, 389 )
+
+[node name="FallingPlatform4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 520, 389 )
+
+[node name="FallingPlatform5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 596, 317 )
+
+[node name="FallingPlatform6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 680, 254 )
+
+[node name="FallingPlatform7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 759, 202 )
+
+[node name="FallingPlatform8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 843, 235 )
+
+[node name="FallingPlatform9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 925, 201 )
 
 [node name="CloseToCamera" type="TileMap" parent="."]
 position = Vector2( 510, 300 )
@@ -760,7 +910,7 @@ scale = Vector2( 0.8, 0.8 )
 z_index = 1
 tile_set = SubResource( 16 )
 format = 1
-tile_data = PoolIntArray( -327690, 0, 0, -327689, 0, 0, -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -262154, 0, 0, -262153, 24, 0, -327672, 19, 0, -327671, 0, 0, -196618, 0, 0, -262136, 20, 0, -262135, 0, 0, -131082, 0, 0, -196601, 9, 0, -196600, 0, 0, -196599, 0, 0, -65546, 0, 0, -131064, 19, 0, -131063, 0, 0, -10, 0, 0, -65531, 9, 0, -65530, 6, 0, -65527, 0, 0, 65526, 0, 0, 9, 0, 0, 131062, 0, 0, 65539, 9, 0, 65540, 6, 0, 65545, 0, 0, 196598, 0, 0, 131081, 0, 0, 262134, 0, 0, 196608, 9, 0, 196609, 6, 0, 196617, 0, 0, 327670, 0, 0, 327671, 23, 0, 327674, 20, 0, 327675, 4, 0, 327676, 1, 0, 327677, 23, 0, 262152, 20, 0, 262153, 0, 0, 393206, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0 )
+tile_data = PoolIntArray( -327690, 0, 0, -327689, 0, 0, -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -262154, 0, 0, -262153, 24, 0, -327672, 19, 0, -327671, 0, 0, -196618, 0, 0, -262135, 0, 0, -131082, 0, 0, -196599, 0, 0, -65546, 0, 0, -131063, 0, 0, -10, 0, 0, -65527, 0, 0, 65526, 0, 0, 9, 0, 0, 131062, 0, 0, 131063, 23, 0, 65545, 0, 0, 196598, 0, 0, 196599, 0, 0, 196600, 0, 0, 196601, 6, 0, 131081, 0, 0, 262134, 0, 0, 262135, 24, 0, 196617, 0, 0, 327670, 0, 0, 327671, 23, 0, 262152, 20, 0, 262153, 0, 0, 393206, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0 )
 
 [node name="Background1" type="TileMap" parent="."]
 position = Vector2( 510, 300 )
