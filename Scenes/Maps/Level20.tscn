@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Sprites/Tiles/Walls_Block.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Props/Exit.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Props/Entrance.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Props/FallingPlatform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Tiles/Additional.png" type="Texture" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=17]
@@ -738,14 +739,378 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [node name="Level20" type="Node2D"]
 
 [node name="Exit" parent="." instance=ExtResource( 2 )]
-position = Vector2( 940, 98 )
-scale = Vector2( 1, 1 )
+position = Vector2( 505, 849 )
+scale = Vector2( 50, 10 )
 z_index = -1
 _levelName = "4-5 Crystal Palace"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
-position = Vector2( 82, 509 )
+position = Vector2( 511, 73 )
 scale = Vector2( 1, 1 )
+
+[node name="FallingPlatform" parent="." instance=ExtResource( 4 )]
+position = Vector2( 61, 215 )
+
+[node name="FallingPlatform2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 125, 215 )
+
+[node name="FallingPlatform3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 189, 215 )
+
+[node name="FallingPlatform4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 253, 215 )
+
+[node name="FallingPlatform5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 317, 215 )
+
+[node name="FallingPlatform6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 381, 215 )
+
+[node name="FallingPlatform7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 445, 215 )
+
+[node name="FallingPlatform8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 509, 215 )
+
+[node name="FallingPlatform9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 573, 215 )
+
+[node name="FallingPlatform10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 637, 215 )
+
+[node name="FallingPlatform11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 701, 215 )
+
+[node name="FallingPlatform12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 765, 215 )
+
+[node name="FallingPlatform13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 830, 215 )
+
+[node name="FallingPlatform14" parent="." instance=ExtResource( 4 )]
+position = Vector2( 894, 215 )
+
+[node name="FallingPlatform15" parent="." instance=ExtResource( 4 )]
+position = Vector2( 958, 215 )
+
+[node name="FallingPlatform108" parent="." instance=ExtResource( 4 )]
+position = Vector2( 61, 151 )
+
+[node name="FallingPlatform109" parent="." instance=ExtResource( 4 )]
+position = Vector2( 125, 151 )
+
+[node name="FallingPlatform110" parent="." instance=ExtResource( 4 )]
+position = Vector2( 189, 151 )
+
+[node name="FallingPlatform111" parent="." instance=ExtResource( 4 )]
+position = Vector2( 253, 151 )
+
+[node name="FallingPlatform112" parent="." instance=ExtResource( 4 )]
+position = Vector2( 317, 151 )
+
+[node name="FallingPlatform113" parent="." instance=ExtResource( 4 )]
+position = Vector2( 381, 151 )
+
+[node name="FallingPlatform114" parent="." instance=ExtResource( 4 )]
+position = Vector2( 445, 151 )
+
+[node name="FallingPlatform115" parent="." instance=ExtResource( 4 )]
+position = Vector2( 509, 151 )
+
+[node name="FallingPlatform116" parent="." instance=ExtResource( 4 )]
+position = Vector2( 573, 151 )
+
+[node name="FallingPlatform117" parent="." instance=ExtResource( 4 )]
+position = Vector2( 637, 151 )
+
+[node name="FallingPlatform118" parent="." instance=ExtResource( 4 )]
+position = Vector2( 701, 151 )
+
+[node name="FallingPlatform119" parent="." instance=ExtResource( 4 )]
+position = Vector2( 765, 151 )
+
+[node name="FallingPlatform120" parent="." instance=ExtResource( 4 )]
+position = Vector2( 830, 151 )
+
+[node name="FallingPlatform121" parent="." instance=ExtResource( 4 )]
+position = Vector2( 894, 151 )
+
+[node name="FallingPlatform122" parent="." instance=ExtResource( 4 )]
+position = Vector2( 958, 151 )
+
+[node name="FallingPlatform16" parent="." instance=ExtResource( 4 )]
+position = Vector2( 61, 279 )
+
+[node name="FallingPlatform17" parent="." instance=ExtResource( 4 )]
+position = Vector2( 125, 279 )
+
+[node name="FallingPlatform18" parent="." instance=ExtResource( 4 )]
+position = Vector2( 189, 279 )
+
+[node name="FallingPlatform19" parent="." instance=ExtResource( 4 )]
+position = Vector2( 253, 279 )
+
+[node name="FallingPlatform20" parent="." instance=ExtResource( 4 )]
+position = Vector2( 317, 279 )
+
+[node name="FallingPlatform21" parent="." instance=ExtResource( 4 )]
+position = Vector2( 381, 279 )
+
+[node name="FallingPlatform22" parent="." instance=ExtResource( 4 )]
+position = Vector2( 445, 279 )
+
+[node name="FallingPlatform23" parent="." instance=ExtResource( 4 )]
+position = Vector2( 509, 279 )
+
+[node name="FallingPlatform24" parent="." instance=ExtResource( 4 )]
+position = Vector2( 573, 279 )
+
+[node name="FallingPlatform25" parent="." instance=ExtResource( 4 )]
+position = Vector2( 637, 279 )
+
+[node name="FallingPlatform26" parent="." instance=ExtResource( 4 )]
+position = Vector2( 701, 279 )
+
+[node name="FallingPlatform27" parent="." instance=ExtResource( 4 )]
+position = Vector2( 765, 279 )
+
+[node name="FallingPlatform28" parent="." instance=ExtResource( 4 )]
+position = Vector2( 830, 279 )
+
+[node name="FallingPlatform29" parent="." instance=ExtResource( 4 )]
+position = Vector2( 894, 279 )
+
+[node name="FallingPlatform30" parent="." instance=ExtResource( 4 )]
+position = Vector2( 958, 279 )
+
+[node name="FallingPlatform31" parent="." instance=ExtResource( 4 )]
+position = Vector2( 61, 343 )
+
+[node name="FallingPlatform32" parent="." instance=ExtResource( 4 )]
+position = Vector2( 125, 343 )
+
+[node name="FallingPlatform33" parent="." instance=ExtResource( 4 )]
+position = Vector2( 189, 343 )
+
+[node name="FallingPlatform34" parent="." instance=ExtResource( 4 )]
+position = Vector2( 253, 343 )
+
+[node name="FallingPlatform35" parent="." instance=ExtResource( 4 )]
+position = Vector2( 317, 343 )
+
+[node name="FallingPlatform36" parent="." instance=ExtResource( 4 )]
+position = Vector2( 381, 343 )
+
+[node name="FallingPlatform37" parent="." instance=ExtResource( 4 )]
+position = Vector2( 445, 343 )
+
+[node name="FallingPlatform38" parent="." instance=ExtResource( 4 )]
+position = Vector2( 509, 343 )
+
+[node name="FallingPlatform39" parent="." instance=ExtResource( 4 )]
+position = Vector2( 573, 343 )
+
+[node name="FallingPlatform40" parent="." instance=ExtResource( 4 )]
+position = Vector2( 637, 343 )
+
+[node name="FallingPlatform41" parent="." instance=ExtResource( 4 )]
+position = Vector2( 701, 343 )
+
+[node name="FallingPlatform42" parent="." instance=ExtResource( 4 )]
+position = Vector2( 765, 343 )
+
+[node name="FallingPlatform43" parent="." instance=ExtResource( 4 )]
+position = Vector2( 830, 343 )
+
+[node name="FallingPlatform44" parent="." instance=ExtResource( 4 )]
+position = Vector2( 894, 343 )
+
+[node name="FallingPlatform45" parent="." instance=ExtResource( 4 )]
+position = Vector2( 958, 343 )
+
+[node name="FallingPlatform46" parent="." instance=ExtResource( 4 )]
+position = Vector2( 61, 407 )
+
+[node name="FallingPlatform47" parent="." instance=ExtResource( 4 )]
+position = Vector2( 125, 407 )
+
+[node name="FallingPlatform48" parent="." instance=ExtResource( 4 )]
+position = Vector2( 189, 407 )
+
+[node name="FallingPlatform49" parent="." instance=ExtResource( 4 )]
+position = Vector2( 253, 407 )
+
+[node name="FallingPlatform50" parent="." instance=ExtResource( 4 )]
+position = Vector2( 317, 407 )
+
+[node name="FallingPlatform51" parent="." instance=ExtResource( 4 )]
+position = Vector2( 381, 407 )
+
+[node name="FallingPlatform52" parent="." instance=ExtResource( 4 )]
+position = Vector2( 445, 407 )
+
+[node name="FallingPlatform53" parent="." instance=ExtResource( 4 )]
+position = Vector2( 509, 407 )
+
+[node name="FallingPlatform54" parent="." instance=ExtResource( 4 )]
+position = Vector2( 573, 407 )
+
+[node name="FallingPlatform55" parent="." instance=ExtResource( 4 )]
+position = Vector2( 637, 407 )
+
+[node name="FallingPlatform56" parent="." instance=ExtResource( 4 )]
+position = Vector2( 701, 407 )
+
+[node name="FallingPlatform57" parent="." instance=ExtResource( 4 )]
+position = Vector2( 765, 407 )
+
+[node name="FallingPlatform58" parent="." instance=ExtResource( 4 )]
+position = Vector2( 830, 407 )
+
+[node name="FallingPlatform59" parent="." instance=ExtResource( 4 )]
+position = Vector2( 894, 407 )
+
+[node name="FallingPlatform60" parent="." instance=ExtResource( 4 )]
+position = Vector2( 958, 407 )
+
+[node name="FallingPlatform61" parent="." instance=ExtResource( 4 )]
+position = Vector2( 61, 471 )
+
+[node name="FallingPlatform62" parent="." instance=ExtResource( 4 )]
+position = Vector2( 125, 471 )
+
+[node name="FallingPlatform63" parent="." instance=ExtResource( 4 )]
+position = Vector2( 189, 471 )
+
+[node name="FallingPlatform64" parent="." instance=ExtResource( 4 )]
+position = Vector2( 253, 471 )
+
+[node name="FallingPlatform65" parent="." instance=ExtResource( 4 )]
+position = Vector2( 317, 471 )
+
+[node name="FallingPlatform66" parent="." instance=ExtResource( 4 )]
+position = Vector2( 381, 471 )
+
+[node name="FallingPlatform67" parent="." instance=ExtResource( 4 )]
+position = Vector2( 445, 471 )
+
+[node name="FallingPlatform68" parent="." instance=ExtResource( 4 )]
+position = Vector2( 509, 471 )
+
+[node name="FallingPlatform69" parent="." instance=ExtResource( 4 )]
+position = Vector2( 573, 471 )
+
+[node name="FallingPlatform70" parent="." instance=ExtResource( 4 )]
+position = Vector2( 637, 471 )
+
+[node name="FallingPlatform71" parent="." instance=ExtResource( 4 )]
+position = Vector2( 701, 471 )
+
+[node name="FallingPlatform72" parent="." instance=ExtResource( 4 )]
+position = Vector2( 765, 471 )
+
+[node name="FallingPlatform73" parent="." instance=ExtResource( 4 )]
+position = Vector2( 830, 471 )
+
+[node name="FallingPlatform74" parent="." instance=ExtResource( 4 )]
+position = Vector2( 894, 471 )
+
+[node name="FallingPlatform75" parent="." instance=ExtResource( 4 )]
+position = Vector2( 958, 471 )
+
+[node name="FallingPlatform76" parent="." instance=ExtResource( 4 )]
+position = Vector2( 61, 535 )
+
+[node name="FallingPlatform77" parent="." instance=ExtResource( 4 )]
+position = Vector2( 125, 535 )
+
+[node name="FallingPlatform78" parent="." instance=ExtResource( 4 )]
+position = Vector2( 189, 535 )
+
+[node name="FallingPlatform79" parent="." instance=ExtResource( 4 )]
+position = Vector2( 253, 535 )
+
+[node name="FallingPlatform80" parent="." instance=ExtResource( 4 )]
+position = Vector2( 317, 535 )
+
+[node name="FallingPlatform81" parent="." instance=ExtResource( 4 )]
+position = Vector2( 381, 535 )
+
+[node name="FallingPlatform82" parent="." instance=ExtResource( 4 )]
+position = Vector2( 445, 535 )
+
+[node name="FallingPlatform83" parent="." instance=ExtResource( 4 )]
+position = Vector2( 509, 535 )
+
+[node name="FallingPlatform84" parent="." instance=ExtResource( 4 )]
+position = Vector2( 573, 535 )
+
+[node name="FallingPlatform85" parent="." instance=ExtResource( 4 )]
+position = Vector2( 637, 535 )
+
+[node name="FallingPlatform86" parent="." instance=ExtResource( 4 )]
+position = Vector2( 701, 535 )
+
+[node name="FallingPlatform87" parent="." instance=ExtResource( 4 )]
+position = Vector2( 765, 535 )
+
+[node name="FallingPlatform88" parent="." instance=ExtResource( 4 )]
+position = Vector2( 830, 535 )
+
+[node name="FallingPlatform89" parent="." instance=ExtResource( 4 )]
+position = Vector2( 894, 535 )
+
+[node name="FallingPlatform90" parent="." instance=ExtResource( 4 )]
+position = Vector2( 958, 535 )
+
+[node name="FallingPlatform91" parent="." instance=ExtResource( 4 )]
+position = Vector2( 61, 599 )
+
+[node name="FallingPlatform92" parent="." instance=ExtResource( 4 )]
+position = Vector2( 125, 599 )
+
+[node name="FallingPlatform93" parent="." instance=ExtResource( 4 )]
+position = Vector2( 189, 599 )
+
+[node name="FallingPlatform94" parent="." instance=ExtResource( 4 )]
+position = Vector2( 253, 599 )
+
+[node name="FallingPlatform95" parent="." instance=ExtResource( 4 )]
+position = Vector2( 317, 599 )
+
+[node name="FallingPlatform96" parent="." instance=ExtResource( 4 )]
+position = Vector2( 381, 599 )
+
+[node name="FallingPlatform97" parent="." instance=ExtResource( 4 )]
+position = Vector2( 445, 599 )
+
+[node name="FallingPlatform98" parent="." instance=ExtResource( 4 )]
+position = Vector2( 509, 599 )
+
+[node name="FallingPlatform99" parent="." instance=ExtResource( 4 )]
+position = Vector2( 573, 599 )
+
+[node name="FallingPlatform100" parent="." instance=ExtResource( 4 )]
+position = Vector2( 637, 599 )
+
+[node name="FallingPlatform101" parent="." instance=ExtResource( 4 )]
+position = Vector2( 701, 599 )
+
+[node name="FallingPlatform102" parent="." instance=ExtResource( 4 )]
+position = Vector2( 765, 599 )
+
+[node name="FallingPlatform103" parent="." instance=ExtResource( 4 )]
+position = Vector2( 830, 599 )
+
+[node name="FallingPlatform104" parent="." instance=ExtResource( 4 )]
+position = Vector2( 894, 599 )
+
+[node name="FallingPlatform105" parent="." instance=ExtResource( 4 )]
+position = Vector2( 958, 599 )
+
+[node name="FallingPlatform106" parent="." instance=ExtResource( 4 )]
+position = Vector2( 526, 669 )
+scale = Vector2( 50, 1 )
 
 [node name="CloseToCamera" type="TileMap" parent="."]
 position = Vector2( 510, 300 )
@@ -760,7 +1125,7 @@ scale = Vector2( 0.8, 0.8 )
 z_index = 1
 tile_set = SubResource( 16 )
 format = 1
-tile_data = PoolIntArray( -327690, 0, 0, -327689, 0, 0, -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -262154, 0, 0, -262153, 24, 0, -327672, 19, 0, -327671, 0, 0, -196618, 0, 0, -262136, 20, 0, -262135, 0, 0, -131082, 0, 0, -196601, 9, 0, -196600, 0, 0, -196599, 0, 0, -65546, 0, 0, -131064, 19, 0, -131063, 0, 0, -10, 0, 0, -65531, 9, 0, -65530, 6, 0, -65527, 0, 0, 65526, 0, 0, 9, 0, 0, 131062, 0, 0, 65539, 9, 0, 65540, 6, 0, 65545, 0, 0, 196598, 0, 0, 131081, 0, 0, 262134, 0, 0, 196608, 9, 0, 196609, 6, 0, 196617, 0, 0, 327670, 0, 0, 327671, 23, 0, 327674, 20, 0, 327675, 4, 0, 327676, 1, 0, 327677, 23, 0, 262152, 20, 0, 262153, 0, 0, 393206, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0 )
+tile_data = PoolIntArray( -327690, 0, 0, -327689, 0, 0, -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -262154, 0, 0, -262153, 24, 0, -327672, 19, 0, -327671, 0, 0, -196618, 0, 0, -262135, 0, 0, -131082, 0, 0, -196599, 0, 0, -65546, 0, 0, -131063, 0, 0, -10, 0, 0, -65527, 0, 0, 65526, 0, 0, 9, 0, 0, 131062, 0, 0, 65545, 0, 0, 196598, 0, 0, 131081, 0, 0, 262134, 0, 0, 196617, 0, 0, 327670, 0, 0, 262153, 0, 0, 393206, 0, 0, 327689, 0, 0, 458742, 0, 0, 393225, 0, 0, 524278, 0, 0, 458761, 0, 0, 589814, 0, 0, 524297, 0, 0, 655350, 0, 0, 589833, 0, 0, 720886, 0, 0, 655369, 0, 0, 786422, 0, 0, 720905, 0, 0, 851958, 0, 0, 786441, 0, 0, 917494, 0, 0, 851977, 0, 0, 983030, 0, 0, 917513, 0, 0, 1048566, 0, 0, 983049, 0, 0, 1114102, 0, 0, 1048585, 0, 0, 1179638, 0, 0, 1114121, 0, 0, 1245174, 0, 0, 1245175, 0, 0, 1245176, 0, 0, 1245177, 0, 0, 1245178, 0, 0, 1245179, 0, 0, 1245180, 0, 0, 1245181, 0, 0, 1245182, 0, 0, 1245183, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 4849655, 0, 0, 4849656, 0, 0, 4849657, 0, 0, 4849658, 0, 0, 4849659, 0, 0, 4849660, 0, 0, 4849661, 0, 0, 4849662, 0, 0, 4849663, 0, 0, 4784128, 0, 0, 4784129, 0, 0, 4784130, 0, 0, 4784131, 0, 0, 4784132, 0, 0, 4784133, 0, 0, 4784134, 0, 0, 4784135, 0, 0, 4784136, 0, 0, 4784137, 0, 0 )
 
 [node name="Background1" type="TileMap" parent="."]
 position = Vector2( 510, 300 )

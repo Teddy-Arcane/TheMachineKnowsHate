@@ -788,43 +788,43 @@ tile_data = PoolIntArray( -393227, 13, 0, -393226, 13, 0, -393225, 13, 0, -39322
 
 [node name="FallingPlatform" parent="." instance=ExtResource( 4 )]
 position = Vector2( 228, 172 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="FallingPlatform2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 433, 172 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="FallingPlatform3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 587, 172 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="FallingPlatform4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 894, 172 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="FallingPlatform5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 792, 275 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="FallingPlatform6" parent="." instance=ExtResource( 4 )]
 position = Vector2( 331, 275 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="FallingPlatform7" parent="." instance=ExtResource( 4 )]
 position = Vector2( 126, 377 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="FallingPlatform8" parent="." instance=ExtResource( 4 )]
 position = Vector2( 485, 377 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="FallingPlatform9" parent="." instance=ExtResource( 4 )]
 position = Vector2( 638, 377 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="FallingPlatform10" parent="." instance=ExtResource( 4 )]
 position = Vector2( 382, 480 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="RedLaser" parent="." instance=ExtResource( 6 )]
 position = Vector2( 618, 428 )
