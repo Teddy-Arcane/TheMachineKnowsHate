@@ -40,7 +40,7 @@ public class Game : Node
 		var entrance = scene.GetNode<Node2D>("Entrance");
 		var player = GetNode<Player>("Player");
 		player.SetInitialPosition(entrance.Position);
-		player.Position = entrance.Position;
+		player.Position = new Vector2(entrance.Position.x, entrance.Position.y + 23);
 		
 		_lightFlicker.StartNewLevel();
 	}

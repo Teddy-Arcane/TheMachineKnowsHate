@@ -570,7 +570,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [node name="Level1" type="Node2D"]
 
 [node name="Exit" parent="." instance=ExtResource( 2 )]
-position = Vector2( 941, 98 )
+position = Vector2( 940, 98 )
 scale = Vector2( 1, 1 )
 z_index = -1
 _levelName = "Level 1"

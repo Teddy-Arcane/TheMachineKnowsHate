@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Scripts/LightFlicker.cs" type="Script" id=1]
 [ext_resource path="res://Sounds/camera.wav" type="AudioStream" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/MainUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Scripts/Game.cs" type="Script" id=5]
+[ext_resource path="res://Scenes/Components/AudioPlayer.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -137,6 +138,9 @@ autostart = true
 
 [node name="Flash" type="AudioStreamPlayer" parent="LightFlicker"]
 stream = ExtResource( 2 )
+
+[node name="AudioPlayer" parent="LightFlicker" instance=ExtResource( 6 )]
+position = Vector2( 20, 0 )
 
 [node name="MainUI" parent="." instance=ExtResource( 4 )]
 

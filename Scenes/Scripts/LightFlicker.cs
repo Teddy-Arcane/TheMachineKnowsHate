@@ -13,6 +13,8 @@ public class LightFlicker : CanvasModulate
 	private Timer _flashSoundTimer;
 	private MainUI _ui;
 	private AudioStreamPlayer _flash;
+	private AudioPlayer _audio;
+	
 	
 	public static float TimeLeft = 0f;
 	
@@ -28,8 +30,11 @@ public class LightFlicker : CanvasModulate
 		_levelStartTimer = GetNode<Timer>("LevelStartTimer");
 		_flashSoundTimer = GetNode<Timer>("FlashSoundTimer");
 		_flash = GetNode<AudioStreamPlayer>("Flash");
+		_audio = GetNode<AudioPlayer>("AudioPlayer");
 	}
 
+	private bool tick1 = false;
+	private bool tick2 = false;
 	public override void _Process(float delta)
 	{
 		if (_levelStartTimer.IsStopped())
@@ -38,7 +43,22 @@ public class LightFlicker : CanvasModulate
 		}
 		else
 		{
-			_ui.SetHint(_levelStartTimer.TimeLeft.ToString("0.0"));
+			if (_levelStartTimer.TimeLeft.ToString("0.00").Contains("2."))
+			{
+				if(!tick1)
+					_audio.Play("Tick");
+				
+				tick1 = true;
+				_ui.SetHint("ready");
+			}
+			if (_levelStartTimer.TimeLeft.ToString("0.00").Contains("1."))
+			{
+				if(!tick2)
+					_audio.Play("Tick");
+				
+				tick2 = true;
+				_ui.SetHint("set");
+			}
 		}
 	}
 
