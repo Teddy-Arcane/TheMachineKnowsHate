@@ -43,7 +43,7 @@ public class LightFlicker : CanvasModulate
 		}
 		else
 		{
-			if (_levelStartTimer.TimeLeft.ToString("0.00").Contains("2."))
+			if (_levelStartTimer.TimeLeft.ToString("0.00").Contains("1."))
 			{
 				if(!tick1)
 					_audio.Play("Tick");
@@ -51,7 +51,7 @@ public class LightFlicker : CanvasModulate
 				tick1 = true;
 				_ui.SetHint("ready");
 			}
-			if (_levelStartTimer.TimeLeft.ToString("0.00").Contains("1."))
+			if (_levelStartTimer.TimeLeft.ToString("0.00").Contains("0."))
 			{
 				if(!tick2)
 					_audio.Play("Tick");
