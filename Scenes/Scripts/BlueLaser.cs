@@ -23,8 +23,6 @@ public class BlueLaser : RayCast2D
 		SetPhysicsProcess(false);
 
 		_line.Points[1] = Vector2.Zero;
-
-		SetIsCasting(true);
 	}
 
 	public override void _PhysicsProcess(float delta)
@@ -44,8 +42,6 @@ public class BlueLaser : RayCast2D
 		}
 
 		_line.SetPointPosition(1, castPoint);
-
-		Visible = true;
 	}
 
 	private void SetIsCasting(bool cast)
@@ -92,6 +88,8 @@ public class BlueLaser : RayCast2D
 			CollisionMask = 10;
 			Dissapear();
 		}
+
+		SetIsCasting(on);
 
 		Visible = on;
 	}

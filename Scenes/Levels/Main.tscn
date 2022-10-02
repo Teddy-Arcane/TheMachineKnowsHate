@@ -118,7 +118,6 @@ anchor_bottom = 1.0
 color = Color( 1, 1, 1, 0 )
 
 [node name="LightFlicker" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 script = ExtResource( 1 )
 
