@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Scripts/BlueLaser.cs" type="Script" id=1]
 [ext_resource path="res://Sprites/Tiles/eye.png" type="Texture" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
 
 [node name="BlueLaser" type="RayCast2D"]
 modulate = Color( 0, 0.25, 1, 1 )
@@ -10,7 +13,9 @@ cast_to = Vector2( 277, 0 )
 script = ExtResource( 1 )
 
 [node name="Line2D" type="Line2D" parent="."]
-light_mask = 2
+modulate = Color( 0, 0, 1.5, 1 )
+light_mask = 3
+material = SubResource( 1 )
 z_index = 1
 points = PoolVector2Array( 0, 0, 0, 0 )
 width = 0.2
