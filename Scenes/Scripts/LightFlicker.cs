@@ -95,6 +95,9 @@ public class LightFlicker : CanvasModulate
 	
 	private void _on_LightsOnTimer_timeout()
 	{
+		if(GetSignalConnectionList("LightsToggled").Count > 0)
+			_audio.Play("Off");
+		
 		EmitSignal("LightsToggled", false);
 	}
 	

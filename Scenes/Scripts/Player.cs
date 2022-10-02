@@ -30,6 +30,8 @@ public class Player : KinematicBody2D
 
 	public static bool MovementDisabled = false;
 
+	public static bool TerminalVelocity = false;
+
 	public override void _Ready()
 	{
 		_initialPosition = Position;
@@ -51,6 +53,7 @@ public class Player : KinematicBody2D
 
 		if (_lastVelocity.y > (_fallDamageThresholdVelocity))
 		{
+			TerminalVelocity = true;
 			_audio.Play("Scream");
 		}
 		
@@ -129,8 +132,11 @@ public class Player : KinematicBody2D
 
 	public void ZeroVelocity()
 	{
+		_lastVelocity = Vector2.Zero;
 		_velocity = Vector2.Zero;
 		_audio.ToggleRun(false);
+		_audio.Stop("Run");
+		_audio.Stop("Scream");
 		
 		MoveAndSlide(_velocity);
 	}
@@ -155,6 +161,8 @@ public class Player : KinematicBody2D
 		
 		_collider.Disabled = false;
 		_isDead = false;
+
+		TerminalVelocity = false;
 	}
 
 	// public void TriggerDialog(string path)

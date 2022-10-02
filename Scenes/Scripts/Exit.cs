@@ -20,7 +20,7 @@ public class Exit : Area2D
 
 	private void _on_Exit_body_entered(Node2D body)
 	{
-		if(body.Name == "Player")
+		if(body.Name == "Player" && !Player.TerminalVelocity)
 		{
 			_game.NextLevel();
 			_levelId = _game.Level;

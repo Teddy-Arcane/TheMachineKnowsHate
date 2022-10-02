@@ -72,7 +72,6 @@ public class BlueLaser : RayCast2D
 		_tween.StopAll();
 		_tween.InterpolateProperty(_line, "width", 2f, 0f, 1f);
 		_tween.Start();
-		_audio.Play("Off");
 	}
 
 	private void LightsToggled(bool on)
