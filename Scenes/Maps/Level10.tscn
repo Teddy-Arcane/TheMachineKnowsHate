@@ -574,7 +574,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 position = Vector2( 943, 43 )
 scale = Vector2( 1, 1 )
 z_index = -1
-_levelName = "Level 10"
+_levelName = "2-5 Tangram"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
 position = Vector2( 118, 198 )
