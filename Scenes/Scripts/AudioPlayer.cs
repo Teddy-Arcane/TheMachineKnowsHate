@@ -6,13 +6,26 @@ public class AudioPlayer : Node2D
 {
 	public void Play(string name)
 	{
-		var players = GetChildren().OfType<AudioStreamPlayer>();
-		foreach (var player in players)
+		var audio = GetNode<AudioStreamPlayer>(name);
+		if(!audio.Playing)
+			audio.Play();
+	}
+
+	public void Stop(string name)
+	{
+		GetNode<AudioStreamPlayer>(name).Stop();
+	}
+
+	public void ToggleRun(bool run)
+	{
+		var tiptap = GetNode<AudioStreamPlayer>("Run");
+		if (tiptap.Playing && !run)
 		{
-			if (player.Playing)
-				player.Stop();
+			tiptap.Playing = false;
 		}
-		
-		GetNode<AudioStreamPlayer>(name).Play();
+		else if (!tiptap.Playing && run)
+		{
+			tiptap.Playing = true;
+		}
 	}
 }

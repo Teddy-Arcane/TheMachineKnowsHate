@@ -49,6 +49,11 @@ public class Player : KinematicBody2D
 		if (_velocity.y > 0)
 			_lastVelocity = _velocity;
 
+		if (_lastVelocity.y > (_fallDamageThresholdVelocity - 200f))
+		{
+			_audio.Play("Scream");
+		}
+		
 		_velocity.x = 0;
 
 		HandleMovement();
@@ -94,6 +99,7 @@ public class Player : KinematicBody2D
 
 	public void LaserKill()
 	{
+		_audio.Stop("Scream");
 		_animator.Play("cinders");
 		_audio.Play("Zap");
 		
@@ -114,6 +120,7 @@ public class Player : KinematicBody2D
 	public void ZeroVelocity()
 	{
 		_velocity = Vector2.Zero;
+		_audio.ToggleRun(false);
 		
 		MoveAndSlide(_velocity);
 	}
@@ -125,9 +132,9 @@ public class Player : KinematicBody2D
 
 	private async void Respawn()
 	{
+		_lastVelocity = Vector2.Zero;
 		PlayAnimation("idle");
 		Position = new Vector2(_initialPosition.x, _initialPosition.y + 23);
-
 
 		await ToSignal(GetTree(), "idle_frame");
 		
@@ -147,17 +154,29 @@ public class Player : KinematicBody2D
 
 		if (Input.IsActionPressed("move_right"))
 		{
+			if(_grounded && _jumpBuffer.IsStopped())
+				_audio.ToggleRun(true);
+			
 			_velocity.x += speed;
 		}
 		else if (Input.IsActionPressed("move_left"))
 		{
+			if(_grounded && _jumpBuffer.IsStopped())
+				_audio.ToggleRun(true);
+			
 			_velocity.x -= speed;
 		}
-
+		else
+		{
+			_audio.ToggleRun(false);
+		}
+		
 		// if in air, exit
 		if (!_grounded || !IsOnFloor())
 		{
+			_grounded = false;
 			_animator.Play("jump");
+			_audio.ToggleRun(false);
 		}
 
 		// trigger animation
@@ -179,10 +198,11 @@ public class Player : KinematicBody2D
 		}
 		else if (!_grounded && IsOnFloor())
 		{
-			GD.Print(_lastVelocity);
 			if (_lastVelocity.y > _fallDamageThresholdVelocity)
 			{
+				_audio.Stop("Scream");
 				_audio.Play("Crunch1");
+				_audio.Play("Thump");
 				_animator.Play("fall");
 
 				Kill();
@@ -191,11 +211,11 @@ public class Player : KinematicBody2D
 			{
 				_audio.Play($"Landing{new Random().Next(1, 4)}");
 			}
+			
+			_audio.Play("Thump");
 
 			_grounded = true;
 			_hasJumped = false;
-
-			//_audio.Play($"Landing{new Random().Next(1, 3)}");
 		}
 
 		if (_velocity.y > 10f)
@@ -211,6 +231,7 @@ public class Player : KinematicBody2D
 
 	private void DoJump()
 	{
+		_audio.ToggleRun(false);
 		_audio.Play($"Jump{new Random().Next(1, 5)}");
 		_velocity.y -= _jumpVelocity;
 		_animator.Play("jump");
