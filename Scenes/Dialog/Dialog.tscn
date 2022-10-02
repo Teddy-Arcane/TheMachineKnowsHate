@@ -11,10 +11,11 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
+_textSpeed = 0.1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="LevelName" type="Label" parent="CanvasLayer"]
+[node name="Text" type="Label" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_scale = Vector2( 1, 0.80299 )
@@ -26,6 +27,10 @@ text = "This Machine Knows Hate"
 align = 1
 valign = 1
 
-[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer"]
+[node name="Indicator" type="Polygon2D" parent="CanvasLayer"]
+scale = Vector2( 58.8715, -67.8327 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Polygon2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Indicator"]
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+wait_time = 0.1

@@ -1,6 +1,8 @@
 using Godot;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using Godot.Collections;
 
 public class Dialog : Control
 {
@@ -8,29 +10,27 @@ public class Dialog : Control
 
 	private int _phraseNum;
 	private bool _finished;
-	private RichTextLabel _text;
-	private RichTextLabel _name;
+	private Label _text;
 	private Timer _timer;
 	private Polygon2D _indicator;
 	private List<DialogItem> _dialog;
 	
 	public override void _Ready()
 	{
-		_name = GetNode<RichTextLabel>("Name");
-		_text = GetNode<RichTextLabel>("Text");
-		_timer = GetNode<Timer>("Timer");
+		_text = GetNode<Label>("CanvasLayer/Text");
+		_timer = GetNode<Timer>("CanvasLayer/Timer");
+		_indicator = GetNode<Polygon2D>("CanvasLayer/Indicator");
+
 		_timer.WaitTime = _textSpeed;
-		_indicator = GetNode<Polygon2D>("Indicator");
+
+		Start("res://Dialog/dialog1.json");
 	}
 
 	public void Start(string dialogPath)
 	{
 		_finished = false;
 		
-		var node = GetParent<CanvasLayer>();
-		node.Visible = true;
-		
-		_dialog = GetDialog(dialogPath);
+		GetDialog(dialogPath);
 		
 		NextPhrase();
 	}
@@ -52,17 +52,28 @@ public class Dialog : Control
 		}
 	}
 
-	private List<DialogItem>  GetDialog(string dialogPath)
+	private void  GetDialog(string dialogPath)
 	{
+		_dialog = new List<DialogItem>();
+		
 		var file = new File();
 		file.Open(dialogPath, File.ModeFlags.Read);
 		string content = file.GetAsText();
 
 		var jsonFile =  JSON.Parse(content).Result;
-		
-		var output =  jsonFile as List<DialogItem>;
 
-		return output;
+		var sceneData = jsonFile as Godot.Collections.Array;
+		for( int i = 0; i < sceneData.Count; i++ )
+		{
+			var data = sceneData[i] as Godot.Collections.Dictionary;
+			var newItem = new DialogItem()
+			{
+				Index = data["Index"].ToString(),
+				Text = data["Text"].ToString()
+			};
+			
+			_dialog.Add(newItem);
+		}
 	}
 
 	private async void NextPhrase()
@@ -75,7 +86,6 @@ public class Dialog : Control
 
 		_finished = false;
 
-		_name.Text = _dialog[_phraseNum].Name;
 		_text.Text = _dialog[_phraseNum].Text;
 
 		_text.VisibleCharacters = 0;
@@ -97,6 +107,6 @@ public class Dialog : Control
 }
 public class DialogItem
 {
-	public string Name { get; set; }
+	public string Index { get; set; }
 	public string Text { get; set; }
 }
