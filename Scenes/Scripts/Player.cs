@@ -63,6 +63,16 @@ public class Player : KinematicBody2D
 		var wasOnFloor = IsOnFloor();
 		_velocity = MoveAndSlide(_velocity, Vector2.Up);
 
+		for (int i = 0; i < GetSlideCount(); i++)
+		{
+			var collision = GetSlideCollision(i);
+			var plat = collision.Collider as FallingPlatform;
+			if (plat != null)
+			{
+				plat.Crack();
+			}
+		}
+
 		if (wasOnFloor && !IsOnFloor())
 		{
 			_coyoteTimer.Start();
