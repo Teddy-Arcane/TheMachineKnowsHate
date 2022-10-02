@@ -1,14 +1,17 @@
 using Godot;
 using System;
+using System.Resources;
 
 public class LightFlicker : CanvasModulate
 {
 	[Export] private float _lerpRate = 0.05f;
 	
 	private Timer _timer;
+	private Timer _soundTimer;
 	private Timer _lightsOnTimer;
 	private MainUI _ui;
-
+	private AudioStreamPlayer _flash;
+	
 	public static float TimeLeft = 0f;
 	public static bool LightsOn = false;
 	
@@ -18,8 +21,10 @@ public class LightFlicker : CanvasModulate
 	public override void _Ready()
 	{
 		_ui = GetTree().Root.GetNode<Control>("GameWorld/MainUI") as MainUI;
-		_timer = GetNode<Timer>("Timer");
+		_timer = GetNode<Timer>("FlashTimer");
+		_soundTimer = GetNode<Timer>("FlashSoundTimer");
 		_lightsOnTimer = GetNode<Timer>("LightsOnTimer");
+		_flash = GetNode<AudioStreamPlayer>("Flash");
 
 		_on_Timer_timeout();
 	}
@@ -37,9 +42,10 @@ public class LightFlicker : CanvasModulate
 	
 	private void _on_Timer_timeout()
 	{
+		_flash.Play();
 		Color = Colors.White;
-		LightsOn = true;
 		_lightsOnTimer.Start();
+		_soundTimer.Start();
 		
 		EmitSignal("LightsToggled", true);
 	}
@@ -49,9 +55,3 @@ public class LightFlicker : CanvasModulate
 		EmitSignal("LightsToggled", false);
 	}
 }
-
-
-
-
-
-

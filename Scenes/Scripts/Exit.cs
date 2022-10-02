@@ -17,7 +17,6 @@ public class Exit : Area2D
 		if(body.Name == "Player")
 		{
 			_game.NextLevel();
-			GetTree().Root.GetNode($"GameWorld/Level{_levelId}").QueueFree();
 			_levelId = _game.Level;
 		}
 	}

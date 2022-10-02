@@ -19,6 +19,7 @@ public class Player : KinematicBody2D
 	private Timer _jumpBuffer;
 	private Light2D _pointLight;
 	private Vector2 _velocity = Vector2.Zero;
+	private AudioPlayer _audio;
 
 	public static bool Movement = true;
 	
@@ -28,6 +29,7 @@ public class Player : KinematicBody2D
 		_animator = GetNode<AnimatedSprite>("AnimatedSprite");
 		_jumpBuffer = GetNode<Timer>("JumpBuffer");
 		_pointLight = GetNode<Light2D>("Light2D");
+		_audio = GetNode<AudioPlayer>("AudioPlayer");
 	}
 	
 	public override void _PhysicsProcess(float delta)
@@ -62,6 +64,11 @@ public class Player : KinematicBody2D
 				_pointLight.TextureScale = _walkLightRadius;
 			}
 		}
+	}
+
+	public void SetInitialPosition(Vector2 initPosit)
+	{
+		_initialPosition = initPosit;
 	}
 
 	public void Kill()
@@ -114,6 +121,7 @@ public class Player : KinematicBody2D
 		else if (!_grounded && IsOnFloor())
 		{
 			_grounded = true;
+			//_audio.Play($"Landing{new Random().Next(1, 3)}");
 		}
 		
 		if (Input.IsActionJustReleased("jump") && _velocity.y < 0)
@@ -124,6 +132,7 @@ public class Player : KinematicBody2D
 
 	private void DoJump()
 	{
+		_audio.Play($"Jump{new Random().Next(1, 4)}");
 		_velocity.y -= _jumpVelocity;
 		_animator.Play("jump");
 		//_ui.SetAction("Jumping");

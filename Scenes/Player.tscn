@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sprites/Character/Running/Running3.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Character/Jump/Jump3.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Sprites/Character/Idle/Standing.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Scripts/Player.cs" type="Script" id=13]
 [ext_resource path="res://Sprites/light.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Components/AudioPlayer.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -47,7 +48,7 @@ _sprintLightRadius = 0.35
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "run"
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -62,3 +63,5 @@ one_shot = true
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 14 )
 energy = 0.46
+
+[node name="AudioPlayer" parent="." instance=ExtResource( 15 )]

@@ -4,7 +4,7 @@ using System;
 public class Game : Node
 {
 	public int Level = 0;
-
+	
 	public override void _Ready()
 	{
 		NextLevel();
@@ -12,13 +12,17 @@ public class Game : Node
 	
 	public override void _Process(float delta)
 	{
-		if(Input.IsActionPressed("skip"))
+		if(Input.IsActionJustPressed("skip"))
 			NextLevel();
 	}
 
 	public void NextLevel()
 	{
+		if(Level > 0)
+			GetTree().Root.GetNode($"GameWorld/Level{Level}").QueueFree();
+
 		Level++;
+		
 		CallDeferred("LoadLevel");
 	}
 
@@ -28,7 +32,8 @@ public class Game : Node
 		AddChild(scene);
 		
 		var entrance = scene.GetNode<Node2D>("Entrance");
-		var player = GetNode<KinematicBody2D>("Player");
+		var player = GetNode<Player>("Player");
+		player.SetInitialPosition(entrance.Position);
 		player.Position = entrance.Position;
 	}
 }
