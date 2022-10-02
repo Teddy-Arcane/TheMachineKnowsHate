@@ -26,8 +26,8 @@ public class Player : KinematicBody2D
 	private Vector2 _lastVelocity;
 	private Timer _deathTimer;
 	private bool _isDead = false;
-	
-	public static bool Movement = true;
+
+	public static bool MovementDisabled = false;
 	
 	public override void _Ready()
 	{
@@ -41,7 +41,7 @@ public class Player : KinematicBody2D
 	
 	public override void _PhysicsProcess(float delta)
 	{
-		if (_isDead) return;
+		if (_isDead || MovementDisabled) return;
 		
 		if (_velocity.y > 0)
 			_lastVelocity = _velocity;
@@ -91,6 +91,9 @@ public class Player : KinematicBody2D
 
 	public void Kill()
 	{
+		_velocity = Vector2.Zero;;
+		
+		// start death timer
 		_deathTimer = new Timer();;
 		_deathTimer.WaitTime = 2;
 		_deathTimer.OneShot = true;

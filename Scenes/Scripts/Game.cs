@@ -4,9 +4,15 @@ using System;
 public class Game : Node
 {
 	public int Level = 0;
+
+	private LightFlicker _lightFlicker;
+	private Timer _flashTimer;
 	
 	public override void _Ready()
 	{
+		_lightFlicker = GetNode <LightFlicker>("LightFlicker");
+		_flashTimer = GetNode <Timer>("LightFlicker/FlashTimer");
+		
 		NextLevel();
 	}
 	
@@ -35,5 +41,7 @@ public class Game : Node
 		var player = GetNode<Player>("Player");
 		player.SetInitialPosition(entrance.Position);
 		player.Position = entrance.Position;
+		
+		_lightFlicker.StartNewLevel();
 	}
 }

@@ -9,11 +9,12 @@ public class LightFlicker : CanvasModulate
 	private Timer _timer;
 	private Timer _soundTimer;
 	private Timer _lightsOnTimer;
+	private Timer _levelStartTimer;
+	private Timer _flashSoundTimer;
 	private MainUI _ui;
 	private AudioStreamPlayer _flash;
 	
 	public static float TimeLeft = 0f;
-	public static bool LightsOn = false;
 	
 	[Signal] public delegate void LightsToggled(bool on);
 	
@@ -24,24 +25,46 @@ public class LightFlicker : CanvasModulate
 		_timer = GetNode<Timer>("FlashTimer");
 		_soundTimer = GetNode<Timer>("FlashSoundTimer");
 		_lightsOnTimer = GetNode<Timer>("LightsOnTimer");
+		_levelStartTimer = GetNode<Timer>("LevelStartTimer");
+		_flashSoundTimer = GetNode<Timer>("FlashSoundTimer");
 		_flash = GetNode<AudioStreamPlayer>("Flash");
-
-		_on_Timer_timeout();
 	}
 
 	public override void _Process(float delta)
 	{
-		TimeLeft = _timer.TimeLeft;
-		_ui.SetHint(TimeLeft.ToString("0.0"));
+		if (_levelStartTimer.IsStopped())
+		{
+			_ui.SetHint(_timer.TimeLeft.ToString("0.0"));
+		}
+		else
+		{
+			_ui.SetHint(_levelStartTimer.TimeLeft.ToString("0.0"));
+		}
 	}
 
 	public override void _PhysicsProcess(float delta)
 	{
-		Color = Color.LinearInterpolate(Colors.Black, _lerpRate);
+		if (_levelStartTimer.IsStopped())
+		{
+			Color = Color.LinearInterpolate(Colors.Black, _lerpRate);
+		}
+	}
+
+	public void StartNewLevel()
+	{
+		Player.MovementDisabled = true;
+		
+		_timer.Stop();
+		_flashSoundTimer.Stop();
+		_lightsOnTimer.Stop();
+		
+		_levelStartTimer.Start();
 	}
 	
 	private void _on_Timer_timeout()
 	{
+		Player.MovementDisabled = false;
+		
 		_flash.Play();
 		Color = Colors.White;
 		_lightsOnTimer.Start();
@@ -53,5 +76,14 @@ public class LightFlicker : CanvasModulate
 	private void _on_LightsOnTimer_timeout()
 	{
 		EmitSignal("LightsToggled", false);
+	}
+	
+	private void _on_LevelStartTimer_timeout()
+	{
+		_timer.Start(_timer.WaitTime);
+		_flashSoundTimer.Start(_flashSoundTimer.WaitTime);
+		_lightsOnTimer.Start(_lightsOnTimer.WaitTime);
+		
+		_on_Timer_timeout();
 	}
 }

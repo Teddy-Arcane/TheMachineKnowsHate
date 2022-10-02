@@ -574,6 +574,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 position = Vector2( 972, 505.91 )
 scale = Vector2( 1, 1 )
 z_index = -1
+_levelName = "Level 8"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
 position = Vector2( 54, 505.379 )
@@ -597,7 +598,7 @@ cast_to = Vector2( 97.5, 0 )
 [node name="BlueLaser" parent="." instance=ExtResource( 5 )]
 position = Vector2( 500, 295.162 )
 rotation = 4.71239
-cast_to = Vector2( 97.5, 0 )
+cast_to = Vector2( 109.162, -9.15527e-05 )
 
 [node name="CloseToCamera" type="TileMap" parent="."]
 position = Vector2( 510, 300 )

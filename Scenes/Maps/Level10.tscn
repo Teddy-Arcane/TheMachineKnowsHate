@@ -574,6 +574,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 position = Vector2( 943, 43 )
 scale = Vector2( 1, 1 )
 z_index = -1
+_levelName = "Level 10"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
 position = Vector2( 118, 198 )
@@ -582,22 +583,22 @@ scale = Vector2( 1, 1 )
 [node name="BlueLaser" parent="." instance=ExtResource( 4 )]
 position = Vector2( 310, 0 )
 rotation = 0.785398
-cast_to = Vector2( 785, 0 )
+cast_to = Vector2( 797.616, 0.00012207 )
 
 [node name="BlueLaser2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 625, 550 )
 rotation = 5.49779
-cast_to = Vector2( 560, 0 )
+cast_to = Vector2( 577.706, 2.11969 )
 
 [node name="BlueLaser3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 305, 550 )
 rotation = 5.49779
-cast_to = Vector2( 775, 0 )
+cast_to = Vector2( 805.395, -2.12347 )
 
 [node name="BlueLaser4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 625, 0 )
 rotation = 0.785398
-cast_to = Vector2( 560, 0 )
+cast_to = Vector2( 572.049, -0.707001 )
 
 [node name="RedLaser" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, 525 )

@@ -19,6 +19,7 @@ public class BlueLaser : RayCast2D
 			_lightFlicker.Connect("LightsToggled", this, "LightsToggled");
 			
 			SetPhysicsProcess(false);
+			
 			_line.Points[1] = Vector2.Zero;
 			
 			SetIsCasting(true);
@@ -27,6 +28,7 @@ public class BlueLaser : RayCast2D
 		public override void _PhysicsProcess(float delta)
 		{
 			var castPoint = CastTo;
+			
 			ForceRaycastUpdate();
 			
 			if (IsColliding())
@@ -41,7 +43,7 @@ public class BlueLaser : RayCast2D
 	
 			_line.SetPointPosition(1, castPoint);
 
-			Visible = LightFlicker.LightsOn;
+			Visible = true;
 		}
 	
 		private void SetIsCasting(bool cast)
@@ -70,7 +72,7 @@ public class BlueLaser : RayCast2D
 		private void Dissapear()
 		{
 			_tween.StopAll();
-			_tween.InterpolateProperty(_line, "width", 10f, 0f, 0.1f);
+			_tween.InterpolateProperty(_line, "width", 2f, 0f, 0.1f);
 			_tween.Start();
 		}
 
@@ -87,5 +89,7 @@ public class BlueLaser : RayCast2D
 				CollisionMask = 10;
 				Dissapear();
 			}
+			
+			Visible = on;
 		}
 }
