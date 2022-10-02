@@ -1,9 +1,11 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Sprites/Tiles/Walls_Block.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Props/Exit.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Props/Entrance.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Props/FallingPlatform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Tiles/Additional.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Props/Laser.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=17]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -741,11 +743,226 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 position = Vector2( 940, 98 )
 scale = Vector2( 1, 1 )
 z_index = -1
-_levelName = "4-3 Cacophony"
+_levelName = "4-3 Roko's Basilisks"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
 position = Vector2( 82, 509 )
 scale = Vector2( 1, 1 )
+
+[node name="FallingPlatform" parent="." instance=ExtResource( 4 )]
+position = Vector2( 206, 541 )
+rotation = -0.785398
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 289, 473 )
+rotation = -0.610865
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 373, 430 )
+rotation = -0.261799
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 481, 406 )
+rotation = -0.0872665
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 579, 361 )
+rotation = -0.610865
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 673, 321 )
+rotation = -0.174533
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 767, 283 )
+rotation = -0.436332
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 854, 214 )
+rotation = -0.785398
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform9" parent="." instance=ExtResource( 4 )]
+position = Vector2( -359, 357 )
+rotation = -0.785398
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform10" parent="." instance=ExtResource( 4 )]
+position = Vector2( -276, 289 )
+rotation = -0.610865
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform11" parent="." instance=ExtResource( 4 )]
+position = Vector2( -192, 246 )
+rotation = -0.261799
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform12" parent="." instance=ExtResource( 4 )]
+position = Vector2( -84, 222 )
+rotation = -0.0872665
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 14, 177 )
+rotation = -0.610865
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform14" parent="." instance=ExtResource( 4 )]
+position = Vector2( 108, 137 )
+rotation = -0.174533
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform15" parent="." instance=ExtResource( 4 )]
+position = Vector2( 202, 99 )
+rotation = -0.436332
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform16" parent="." instance=ExtResource( 4 )]
+position = Vector2( 289, 30 )
+rotation = -0.785398
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform17" parent="." instance=ExtResource( 4 )]
+position = Vector2( -38, 397 )
+rotation = -0.785398
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform18" parent="." instance=ExtResource( 4 )]
+position = Vector2( 45, 329 )
+rotation = -0.610865
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform19" parent="." instance=ExtResource( 4 )]
+position = Vector2( 129, 286 )
+rotation = -0.261799
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform20" parent="." instance=ExtResource( 4 )]
+position = Vector2( 237, 262 )
+rotation = -0.0872665
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform21" parent="." instance=ExtResource( 4 )]
+position = Vector2( 335, 217 )
+rotation = -0.610865
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform22" parent="." instance=ExtResource( 4 )]
+position = Vector2( 429, 177 )
+rotation = -0.174533
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform23" parent="." instance=ExtResource( 4 )]
+position = Vector2( 523, 139 )
+rotation = -0.436332
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform24" parent="." instance=ExtResource( 4 )]
+position = Vector2( 610, 70 )
+rotation = -0.785398
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform25" parent="." instance=ExtResource( 4 )]
+position = Vector2( 541, 568 )
+rotation = -0.785398
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform26" parent="." instance=ExtResource( 4 )]
+position = Vector2( 624, 500 )
+rotation = -0.610865
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform27" parent="." instance=ExtResource( 4 )]
+position = Vector2( 708, 457 )
+rotation = -0.261799
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform28" parent="." instance=ExtResource( 4 )]
+position = Vector2( 816, 433 )
+rotation = -0.0872665
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform29" parent="." instance=ExtResource( 4 )]
+position = Vector2( 914, 388 )
+rotation = -0.610865
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform30" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1008, 348 )
+rotation = -0.174533
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform31" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1102, 310 )
+rotation = -0.436332
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform32" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1189, 241 )
+rotation = -0.785398
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform33" parent="." instance=ExtResource( 4 )]
+position = Vector2( 402, 785 )
+rotation = -0.785398
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform34" parent="." instance=ExtResource( 4 )]
+position = Vector2( 485, 717 )
+rotation = -0.610865
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform35" parent="." instance=ExtResource( 4 )]
+position = Vector2( 569, 674 )
+rotation = -0.261799
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform36" parent="." instance=ExtResource( 4 )]
+position = Vector2( 677, 650 )
+rotation = -0.0872665
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform37" parent="." instance=ExtResource( 4 )]
+position = Vector2( 775, 605 )
+rotation = -0.610865
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform38" parent="." instance=ExtResource( 4 )]
+position = Vector2( 869, 565 )
+rotation = -0.174533
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform39" parent="." instance=ExtResource( 4 )]
+position = Vector2( 963, 527 )
+rotation = -0.436332
+scale = Vector2( 2, 1 )
+
+[node name="FallingPlatform40" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1050, 458 )
+rotation = -0.785398
+scale = Vector2( 2, 1 )
+
+[node name="RedLaser" parent="." instance=ExtResource( 6 )]
+position = Vector2( 452, 557 )
+rotation = -0.610865
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 754, 556 )
+rotation = -0.610865
+cast_to = Vector2( 1000, 0 )
+
+[node name="RedLaser3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 50, 271 )
+rotation = -0.610865
+cast_to = Vector2( 1000, 0 )
 
 [node name="CloseToCamera" type="TileMap" parent="."]
 position = Vector2( 510, 300 )
@@ -760,7 +977,7 @@ scale = Vector2( 0.8, 0.8 )
 z_index = 1
 tile_set = SubResource( 16 )
 format = 1
-tile_data = PoolIntArray( -327690, 0, 0, -327689, 0, 0, -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -262154, 0, 0, -262153, 24, 0, -327672, 19, 0, -327671, 0, 0, -196618, 0, 0, -262136, 20, 0, -262135, 0, 0, -131082, 0, 0, -196601, 9, 0, -196600, 0, 0, -196599, 0, 0, -65546, 0, 0, -131064, 19, 0, -131063, 0, 0, -10, 0, 0, -65531, 9, 0, -65530, 6, 0, -65527, 0, 0, 65526, 0, 0, 9, 0, 0, 131062, 0, 0, 65539, 9, 0, 65540, 6, 0, 65545, 0, 0, 196598, 0, 0, 131081, 0, 0, 262134, 0, 0, 196608, 9, 0, 196609, 6, 0, 196617, 0, 0, 327670, 0, 0, 327671, 23, 0, 327674, 20, 0, 327675, 4, 0, 327676, 1, 0, 327677, 23, 0, 262152, 20, 0, 262153, 0, 0, 393206, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0 )
+tile_data = PoolIntArray( -327690, 0, 0, -327689, 0, 0, -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -262154, 0, 0, -262153, 24, 0, -327672, 19, 0, -327671, 0, 0, -196618, 0, 0, -262136, 20, 0, -262135, 0, 0, -131082, 0, 0, -196601, 9, 0, -196600, 0, 0, -196599, 0, 0, -65546, 0, 0, -131064, 19, 0, -131063, 0, 0, -10, 0, 0, -65527, 0, 0, 65526, 0, 0, 9, 0, 0, 131062, 0, 0, 65545, 0, 0, 196598, 0, 0, 131081, 0, 0, 262134, 0, 0, 196617, 0, 0, 327670, 0, 0, 327671, 23, 0, 262152, 20, 0, 262153, 0, 0, 393206, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0 )
 
 [node name="Background1" type="TileMap" parent="."]
 position = Vector2( 510, 300 )
