@@ -20,16 +20,16 @@ scale = Vector2( 1, 1 )
 [node name="RedLaser" parent="." instance=ExtResource( 4 )]
 position = Vector2( 50, 220 )
 rotation = 0.260639
-cast_to = Vector2( 370, 0 )
+cast_to = Vector2( 392.034, 3.07761 )
 
 [node name="RedLaser2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 540 )
-cast_to = Vector2( 1020, 0 )
+cast_to = Vector2( 1039, 0 )
 
 [node name="RedLaser3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 970, 220 )
 rotation = 2.87979
-cast_to = Vector2( 370, 0 )
+cast_to = Vector2( 386.172, -0.0518188 )
 
 [node name="CloseToCamera" type="TileMap" parent="."]
 position = Vector2( 510, 300 )

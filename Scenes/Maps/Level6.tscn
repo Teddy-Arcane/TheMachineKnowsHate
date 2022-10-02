@@ -22,7 +22,8 @@ position = Vector2( 262, 480 )
 cast_to = Vector2( 365, 0 )
 
 [node name="RedLaser2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 0, 550 )
+position = Vector2( 1019, 537 )
+rotation = 3.14159
 cast_to = Vector2( 1050, 0 )
 
 [node name="RedLaser3" parent="." instance=ExtResource( 4 )]

@@ -35,7 +35,6 @@ public class Laser : RayCast2D
 			castPoint = ToLocal(GetCollisionPoint());
 		}
 
-
 		_line.SetPointPosition(1, castPoint);
 	}
 

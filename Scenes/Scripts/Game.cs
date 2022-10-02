@@ -32,11 +32,9 @@ public class Game : Node
 		CallDeferred("LoadLevel");
 	}
 
-	public void LoadLevel()
+	public async void LoadLevel()
 	{
 		var scene = GD.Load<PackedScene>($"res://Scenes/Maps/Level{Level}.tscn").Instance();
-		AddChild(scene);
-		
 		var entrance = scene.GetNode<Node2D>("Entrance");
 		var player = GetNode<Player>("Player");
 		player.SetInitialPosition(new Vector2(entrance.Position.x, entrance.Position.y ));
@@ -44,6 +42,10 @@ public class Game : Node
 		player.PlayAnimation("idle");
 		player.ZeroVelocity();
 		
+		await ToSignal(GetTree(), "idle_frame");
+		
+		AddChild(scene);
+
 		_lightFlicker.StartNewLevel();
 	}
 }
