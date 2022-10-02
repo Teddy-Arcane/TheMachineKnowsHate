@@ -46,7 +46,11 @@ public class Player : KinematicBody2D
 
 	public override void _PhysicsProcess(float delta)
 	{
-		if (_isDead || MovementDisabled) return;
+		if (_isDead || MovementDisabled)
+		{
+			_audio.Stop("Run");
+			return;
+		}
 		
 		if (_velocity.y > 0)
 			_lastVelocity = _velocity;
