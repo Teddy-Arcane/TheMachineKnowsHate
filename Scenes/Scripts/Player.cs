@@ -6,11 +6,12 @@ public class Player : KinematicBody2D
 	[Export] private float _speed = 200f;
 	[Export] private float _jumpVelocity = 200f;
 	[Export] private float _gravity = 200f;
-	[Export] private float _fallDamageCutOff = 700f;
 	[Export] private float _sprintModifier = 1.5f;
 	[Export] private float _idleLightRadius = 0.2f;
 	[Export] private float _walkLightRadius = 0.4f;
 	[Export] private float _sprintLightRadius = 1f;
+	[Export] private float _fallDamageThresholdVelocity = 950f;
+	[Export] private float _gruntThreshold = 500f;
 
 	private AnimatedSprite _animator;
 	private bool _grounded = true;
@@ -22,7 +23,10 @@ public class Player : KinematicBody2D
 	private Vector2 _velocity = Vector2.Zero;
 	private AudioPlayer _audio;
 	private bool _hasJumped = false;
-
+	private Vector2 _lastVelocity;
+	private Timer _deathTimer;
+	private bool _isDead = false;
+	
 	public static bool Movement = true;
 	
 	public override void _Ready()
@@ -37,6 +41,11 @@ public class Player : KinematicBody2D
 	
 	public override void _PhysicsProcess(float delta)
 	{
+		if (_isDead) return;
+		
+		if (_velocity.y > 0)
+			_lastVelocity = _velocity;
+		
 		_velocity.x = 0;
 
 		HandleMovement();
@@ -82,7 +91,21 @@ public class Player : KinematicBody2D
 
 	public void Kill()
 	{
+		_deathTimer = new Timer();;
+		_deathTimer.WaitTime = 2;
+		_deathTimer.OneShot = true;
+		_deathTimer.Autostart = false;
+		_isDead = true;
+		AddChild(_deathTimer);
+		_deathTimer.Connect("timeout", this, "Respawn");
+		_deathTimer.Start();
+	}
+
+	private void Respawn()
+	{
 		Position = _initialPosition;
+		_deathTimer.QueueFree();
+		_isDead = false;
 	}
 
 	// public void TriggerDialog(string path)
@@ -129,9 +152,28 @@ public class Player : KinematicBody2D
 		}
 		else if (!_grounded && IsOnFloor())
 		{
+			GD.Print(_lastVelocity);
+			if (_lastVelocity.y > _fallDamageThresholdVelocity)
+			{
+				_audio.Play("Crunch1");
+				_animator.Play("fall");
+				
+				Kill();
+			}
+			else if (_lastVelocity.y > _gruntThreshold)
+			{
+				_audio.Play($"Landing{new Random().Next(1, 4)}");
+			}
+				
 			_grounded = true;
 			_hasJumped = false;
+			
 			//_audio.Play($"Landing{new Random().Next(1, 3)}");
+		}
+
+		if (_velocity.y > 10f)
+		{
+			_grounded = false;
 		}
 		
 		if (Input.IsActionJustReleased("jump") && _velocity.y < 0)
@@ -142,7 +184,7 @@ public class Player : KinematicBody2D
 
 	private void DoJump()
 	{
-		_audio.Play($"Jump{new Random().Next(1, 4)}");
+		_audio.Play($"Jump{new Random().Next(1, 5)}");
 		_velocity.y -= _jumpVelocity;
 		_animator.Play("jump");
 		//_ui.SetAction("Jumping");
