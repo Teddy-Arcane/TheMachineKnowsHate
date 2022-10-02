@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sounds/jump2.wav" type="AudioStream" id=1]
 [ext_resource path="res://Sounds/jump3.wav" type="AudioStream" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Sounds/Run.wav" type="AudioStream" id=14]
 [ext_resource path="res://Sounds/Thump.wav" type="AudioStream" id=15]
 [ext_resource path="res://Sounds/Scream.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sounds/off.wav" type="AudioStream" id=17]
 
 [node name="AudioPlayer" type="Node2D"]
 position = Vector2( 5, 5 )
@@ -65,3 +66,6 @@ stream = ExtResource( 15 )
 
 [node name="Scream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
+
+[node name="Off" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
