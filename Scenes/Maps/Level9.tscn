@@ -575,8 +575,13 @@ scale = Vector2( 1, 1 )
 z_index = -1
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
-position = Vector2( 370, 43 )
+position = Vector2( 356, 46 )
 scale = Vector2( 1, 1 )
+
+[node name="BlueLaser3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 560, 300 )
+rotation = 3.14159
+cast_to = Vector2( 100, 0 )
 
 [node name="BlueLaser2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 460, 200 )
