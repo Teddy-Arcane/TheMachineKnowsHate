@@ -111,6 +111,13 @@ public class Player : KinematicBody2D
 		_deathTimer.Start();
 	}
 
+	public void ZeroVelocity()
+	{
+		_velocity = Vector2.Zero;
+		
+		MoveAndSlide(_velocity);
+	}
+
 	public void PlayAnimation(string name)
 	{
 		_animator.Play(name);

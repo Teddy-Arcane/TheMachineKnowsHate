@@ -65,7 +65,7 @@ public class BlueLaser : RayCast2D
 		private void Appear()
 		{
 			_tween.StopAll();
-			_tween.InterpolateProperty(_line, "width", 0f, 2f, 1f);
+			_tween.InterpolateProperty(_line, "width", 0f, 2f, 0.1f);
 			_tween.Start();
 		}
 	
