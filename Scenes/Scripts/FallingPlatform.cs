@@ -28,6 +28,13 @@ public class FallingPlatform : KinematicBody2D
 		}
 	}
 
+	public void Respawn()
+	{
+		_collider.Disabled = false;
+		_animated.Play("normal");
+		Visible = true;
+	}
+
 	private void _on_FallTimer_timeout()
 	{
 		_audioPlayer.Play("Break");

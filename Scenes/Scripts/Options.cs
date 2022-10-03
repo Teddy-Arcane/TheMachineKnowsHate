@@ -5,14 +5,17 @@ public class Options : Control
 	private Settings _settings;
 	private CheckBox _fullscreen;
 	private CheckBox _vsync;
+	private Button _ok;
 
 	public override void _Ready()
 	{
-		_fullscreen = GetNode<CheckBox>("CanvasLayer/VBoxContainer/HBoxContainer/Fullscreen");
-		_vsync = GetNode<CheckBox>("CanvasLayer/VBoxContainer/HBoxContainer2/Vsync");
-
+		_fullscreen = GetNode<CheckBox>("CanvasLayer/ColorRect/Fullscreen");
+		_vsync = GetNode<CheckBox>("CanvasLayer/ColorRect/Vsync");
+		_ok = GetNode<Button>("CanvasLayer/ColorRect/OK");
 		_settings = GetNode<Settings>("/root/Settings");
 
+		_ok.GrabFocus();
+		
 		SetToggles();
 	}
 

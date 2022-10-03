@@ -2,9 +2,7 @@
 FEATURES
 ----------------
 - sound options
-- menu controller support
 - glass needs to respawn on death
-- tutorial messages
 
 ----------------
 POLISH
@@ -17,9 +15,11 @@ POLISH
 - moving glass blocks back to OG position on death
 - background ambience
 - Still some misaligned entry doors
+- blinking dialog indicator
 
 ----------------
 BUGS
 ----------------
 - spawning off center
 - [nonrepro] screaming persisting through death
+- lights are on when you skip a level
