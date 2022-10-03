@@ -13,6 +13,7 @@ position = Vector2( 972, 505.91 )
 scale = Vector2( 1, 1 )
 z_index = -1
 _levelName = "2-3 Bypass"
+_message = "[Blue Lasers] are tied to the [Lights]"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
 position = Vector2( 54, 508 )

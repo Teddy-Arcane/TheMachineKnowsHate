@@ -12,6 +12,7 @@ position = Vector2( 946, 198 )
 scale = Vector2( 1, 1 )
 z_index = -1
 _levelName = "2-1 Hot Wire"
+_message = "[Sprint] to cross large gaps"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
 position = Vector2( 73, 356 )
