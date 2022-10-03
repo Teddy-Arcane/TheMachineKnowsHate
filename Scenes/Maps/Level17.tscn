@@ -803,6 +803,7 @@ cast_to = Vector2( 1000, 0 )
 position = Vector2( 765, 453.26 )
 scale = Vector2( 0.8, 0.8 )
 _moveTo = Vector2( -700, -380 )
+_speed = 2.0
 
 [node name="CloseToCamera" type="TileMap" parent="."]
 position = Vector2( 510, 300 )
