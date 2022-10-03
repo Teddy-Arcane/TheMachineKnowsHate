@@ -884,55 +884,55 @@ position = Vector2( 740, 203 )
 rotation = 1.5708
 
 [node name="FallingPlatform13" parent="." instance=ExtResource( 5 )]
-position = Vector2( 872, 529 )
+position = Vector2( 881, 529 )
 scale = Vector2( 0.1, 1 )
 
 [node name="FallingPlatform14" parent="." instance=ExtResource( 5 )]
-position = Vector2( 872, 428 )
+position = Vector2( 881, 428 )
 scale = Vector2( 0.1, 1 )
 
 [node name="FallingPlatform15" parent="." instance=ExtResource( 5 )]
-position = Vector2( 711, 428 )
+position = Vector2( 691, 428 )
 scale = Vector2( 0.1, 1 )
 
 [node name="FallingPlatform16" parent="." instance=ExtResource( 5 )]
-position = Vector2( 462, 425 )
+position = Vector2( 471, 425 )
 scale = Vector2( 0.1, 1 )
 
 [node name="FallingPlatform17" parent="." instance=ExtResource( 5 )]
-position = Vector2( 302, 427 )
+position = Vector2( 292, 427 )
 scale = Vector2( 0.1, 1 )
 
 [node name="FallingPlatform18" parent="." instance=ExtResource( 5 )]
-position = Vector2( 302, 325 )
+position = Vector2( 292, 325 )
 scale = Vector2( 0.1, 1 )
 
 [node name="FallingPlatform19" parent="." instance=ExtResource( 5 )]
-position = Vector2( 462, 328 )
+position = Vector2( 480, 328 )
 scale = Vector2( 0.1, 1 )
 
 [node name="FallingPlatform20" parent="." instance=ExtResource( 5 )]
-position = Vector2( 769, 325 )
+position = Vector2( 778, 325 )
 scale = Vector2( 0.1, 1 )
 
 [node name="FallingPlatform21" parent="." instance=ExtResource( 5 )]
-position = Vector2( 609, 324 )
+position = Vector2( 599, 324 )
 scale = Vector2( 0.1, 1 )
 
 [node name="FallingPlatform22" parent="." instance=ExtResource( 5 )]
-position = Vector2( 608, 223 )
+position = Vector2( 598, 223 )
 scale = Vector2( 0.1, 1 )
 
 [node name="FallingPlatform24" parent="." instance=ExtResource( 5 )]
-position = Vector2( 360, 223 )
+position = Vector2( 369, 223 )
 scale = Vector2( 0.1, 1 )
 
 [node name="FallingPlatform25" parent="." instance=ExtResource( 5 )]
-position = Vector2( 199, 223 )
+position = Vector2( 189, 223 )
 scale = Vector2( 0.1, 1 )
 
 [node name="FallingPlatform23" parent="." instance=ExtResource( 5 )]
-position = Vector2( 769, 223 )
+position = Vector2( 778, 223 )
 scale = Vector2( 0.1, 1 )
 
 [node name="RedLaser4" parent="." instance=ExtResource( 7 )]
