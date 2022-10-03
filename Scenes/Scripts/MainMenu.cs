@@ -15,7 +15,7 @@ public class MainMenu : Control
 
 	private void _on_Start_pressed()
 	{
-		GetTree().ChangeScene("res://Scenes/Levels/Main.tscn");
+		GetTree().ChangeScene("res://Scenes/ControlsMandatory.tscn");
 	}
 
 	private void _on_Options_pressed()

@@ -38,13 +38,14 @@ margin_bottom = 288.0
 
 [node name="Start" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 margin_right = 317.0
-margin_bottom = 65.0
+margin_bottom = 82.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "Start"
 flat = true
 
 [node name="Controls" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+visible = false
 margin_top = 69.0
 margin_right = 317.0
 margin_bottom = 134.0
@@ -54,25 +55,25 @@ text = "How To Play"
 flat = true
 
 [node name="Options" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
-margin_top = 138.0
+margin_top = 86.0
 margin_right = 317.0
-margin_bottom = 203.0
+margin_bottom = 168.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "Options"
 flat = true
 
 [node name="Credits" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
-margin_top = 207.0
+margin_top = 172.0
 margin_right = 317.0
-margin_bottom = 272.0
+margin_bottom = 254.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "Credits"
 flat = true
 
 [node name="Quit" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
-margin_top = 276.0
+margin_top = 258.0
 margin_right = 317.0
 margin_bottom = 341.0
 size_flags_vertical = 3
