@@ -12,6 +12,7 @@ position = Vector2( 995, 508 )
 scale = Vector2( 1, 1 )
 z_index = -1
 _levelName = "1-3 Spelunking"
+_message = "Long drops are [Lethal]"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
 position = Vector2( 511, 48 )

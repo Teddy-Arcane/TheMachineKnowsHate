@@ -742,7 +742,7 @@ position = Vector2( 940, 98 )
 scale = Vector2( 1, 1 )
 z_index = -1
 _levelName = "1-1 Stairway"
-_message = ""
+_message = "Reach the [Exit]"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
 position = Vector2( 82, 509 )

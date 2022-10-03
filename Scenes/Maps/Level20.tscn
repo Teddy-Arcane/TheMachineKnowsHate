@@ -744,6 +744,7 @@ position = Vector2( 938, 506 )
 scale = Vector2( 1, 1 )
 z_index = -1
 _levelName = "4-1 Spelunking II"
+_message = "[Glass] breaks easily"
 
 [node name="Entrance" parent="." instance=ExtResource( 1 )]
 position = Vector2( 86, 98 )
