@@ -127,7 +127,7 @@ one_shot = true
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 14 )
 texture_scale = 0.2
-energy = 0.2
+energy = 0.5
 
 [node name="AudioPlayer" parent="." instance=ExtResource( 15 )]
 
