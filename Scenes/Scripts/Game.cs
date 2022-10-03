@@ -18,7 +18,7 @@ public class Game : Node
 		_levelname = GetNode<Label>("MainUI/CanvasLayer/LevelName");
 		_player = GetNode<KinematicBody2D>("Player");
 		_audio = GetNode<AudioPlayer>("AudioPlayer");
-		
+
 		_audio.Play("Fan");
 		
 		NextLevel();

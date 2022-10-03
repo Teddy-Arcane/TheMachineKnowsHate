@@ -775,3 +775,5 @@ tile_data = PoolIntArray( -393227, 13, 0, -393226, 13, 0, -393225, 13, 0, -39322
 
 [node name="Control" parent="." instance=ExtResource( 4 )]
 _file = "res://Dialog/dialog5.json"
+_lastScreen = true
+_lastScreenMessage = "PRESS [START] TO QUIT, OR [A] TO CONTINUE THE LOOP"

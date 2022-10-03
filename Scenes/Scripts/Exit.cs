@@ -12,6 +12,7 @@ public class Exit : Area2D
 	private MainUI _mainUI;
 	private Timer _timer;
 	private Player _player;
+	private Label _hint;
 	
 	public override void _Ready()
 	{
@@ -19,6 +20,7 @@ public class Exit : Area2D
 		_levelId = _game.Level;
 		_mainUI = GetTree().Root.GetNode<MainUI>("GameWorld/MainUI");
 		_timer = GetNode<Timer>("Timer");
+		_hint = GetTree().Root.GetNode<Label>("GameWorld/MainUI/CanvasLayer/Hint");
 		
 		_mainUI.SetLevelName(_levelName);
 	}
@@ -46,6 +48,7 @@ public class Exit : Area2D
 			}
 			else if(_deathMeansNextLevel)
 			{
+				_hint.Visible = false;
 				_player = body as Player;
 				_timer.Start();
 			}

@@ -306,7 +306,7 @@ public class Player : KinematicBody2D
 	private void HandleDirection(Vector2 velocity)
 	{
 		// if idle face last known direction
-		if (velocity == Vector2.Zero)
+		if (velocity.x == 0f)
 		{
 			if (_lastDirection == Vector2.Left)
 			{
@@ -320,8 +320,9 @@ public class Player : KinematicBody2D
 		// if moving face running direction
 		else
 		{
-			_animator.FlipH = velocity.x < 0;
-			_lastDirection = velocity;
+			var movingLeft = Input.IsActionPressed("move_left");
+			_animator.FlipH = movingLeft;
+			_lastDirection = movingLeft ? Vector2.Left: Vector2.Right;
 		}
 	}
 

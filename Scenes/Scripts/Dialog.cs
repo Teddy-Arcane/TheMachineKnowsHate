@@ -8,6 +8,8 @@ public class Dialog : Control
 {
 	[Export] private float _textSpeed;
 	[Export] private string _file;
+	[Export] private bool _lastScreen;
+	[Export] private string _lastScreenMessage;
 
 	private int _phraseNum;
 	private bool _finished;
@@ -16,6 +18,7 @@ public class Dialog : Control
 	private Node2D _indicator;
 	private List<DialogItem> _dialog;
 	private Game _game;
+	private bool _finalChoiceHit = false;
 	
 	public override void _Ready()
 	{
@@ -39,17 +42,31 @@ public class Dialog : Control
 
 	public override void _Process(float delta)
 	{
-		_indicator.Visible = _finished;
-		if (Input.IsActionJustPressed("jump"))
+		if (_finalChoiceHit)
 		{
-			if (_finished)
+			if (Input.IsActionJustPressed("jump"))
 			{
-				NextPhrase();
+				_game.NextLevel();
 			}
-			else
+			else if (Input.IsActionPressed("quit_last_screen"))
 			{
-				_text.VisibleCharacters = _text.Text.Length;
-				_finished = true;
+				GetTree().Quit();
+			}
+		}
+		else
+		{
+			_indicator.Visible = _finished;
+			if (Input.IsActionJustPressed("jump"))
+			{
+				if (_finished)
+				{
+					NextPhrase();
+				}
+				else
+				{
+					_text.VisibleCharacters = _text.Text.Length;
+					_finished = true;
+				}
 			}
 		}
 	}
@@ -82,8 +99,20 @@ public class Dialog : Control
 	{
 		if (_phraseNum == _dialog.Count)
 		{
-			_game.NextLevel();
-			return;
+			if (_lastScreen)
+			{
+				_text.Text = _lastScreenMessage;
+				_text.VisibleCharacters = _lastScreenMessage.Length;
+				_finalChoiceHit = true;
+
+				return;
+			}
+			else
+			{
+				_game.NextLevel();
+				
+				return;
+			}
 		}
 
 		_finished = false;
