@@ -263,7 +263,9 @@ public class Player : KinematicBody2D
 	{
 		_audio.ToggleRun(false);
 		_audio.Play($"Jump{new Random().Next(1, 5)}");
+
 		_velocity.y -= _jumpVelocity;
+		
 		_animator.Play("jump");
 		//_ui.SetAction("Jumping");
 		_hasJumped = true;
