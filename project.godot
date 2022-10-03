@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="LD51_NonBorked"
-run/main_scene="res://Scenes/MainMenu.tscn"
+run/main_scene="res://Scenes/IntroVideo.tscn"
 boot_splash/show_image=false
 
 [autoload]
