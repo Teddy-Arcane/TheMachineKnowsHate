@@ -5,18 +5,20 @@ public class Exit : Area2D
 {
 	[Export] private string _levelName;
 	[Export] private string _message;
+	[Export] private bool _deathMeansNextLevel = false;
 
 	private Game _game;
 	private int _levelId;
 	private MainUI _mainUI;
+	private Timer _timer;
+	private Player _player;
 	
 	public override void _Ready()
 	{
 		_game = GetTree().Root.GetNode("GameWorld") as Game;
 		_levelId = _game.Level;
 		_mainUI = GetTree().Root.GetNode<MainUI>("GameWorld/MainUI");
-
-		
+		_timer = GetNode<Timer>("Timer");
 		
 		_mainUI.SetLevelName(_levelName);
 	}
@@ -35,10 +37,25 @@ public class Exit : Area2D
 
 	private void _on_Exit_body_entered(Node2D body)
 	{
-		if(body.Name == "Player" && !Player.TerminalVelocity)
+		if(body.Name == "Player")
 		{
-			_game.NextLevel();
-			_levelId = _game.Level;
+			if (!Player.TerminalVelocity)
+			{
+				_game.NextLevel();
+				_levelId = _game.Level;
+			}
+			else if(_deathMeansNextLevel)
+			{
+				_player = body as Player;
+				_timer.Start();
+			}
 		}
+	}
+	
+	private void _on_Timer_timeout()
+	{
+		_player.ActuallyKill();
+		_game.NextLevel();
+		_levelId = _game.Level;
 	}
 }

@@ -52,6 +52,7 @@ public class Player : KinematicBody2D
 		if (_isDead || MovementDisabled)
 		{
 			_audio.Stop("Run");
+			
 			return;
 		}
 		
@@ -127,6 +128,29 @@ public class Player : KinematicBody2D
 	}
 
 	public void Kill()
+	{
+		var finalExit = GetTree().Root.GetNodeOrNull<Exit>("GameWorld/Level24/Exit");
+		if (finalExit != null)
+		{
+			_collider.Disabled = true;
+			_velocity = Vector2.Zero;
+
+			MoveAndSlide(_velocity);
+
+			_isDead = true;
+		}
+		else
+		{
+			ActuallyKill();
+		}
+	}
+
+	public void StopScream()
+	{
+		_audio.Stop("Scream");
+	}
+
+	public void ActuallyKill()
 	{
 		_collider.Disabled = true;
 		_velocity = Vector2.Zero;
