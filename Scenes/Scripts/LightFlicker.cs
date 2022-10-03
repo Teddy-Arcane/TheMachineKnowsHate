@@ -48,17 +48,21 @@ public class LightFlicker : CanvasModulate
 				if(!tick1)
 					_audio.Play("Tick");
 				
+				_ui.SetHint(_levelStartTimer.TimeLeft.ToString("ready"));
+				
 				tick1 = true;
-				_ui.SetHint("ready");
 			}
 			if (_levelStartTimer.TimeLeft.ToString("0.00").Contains("0."))
 			{
 				if(!tick2)
 					_audio.Play("Tick");
 				
+				_ui.SetHint(_levelStartTimer.TimeLeft.ToString("set"));
 				tick2 = true;
-				_ui.SetHint("set");
 			}
+			
+			
+
 		}
 	}
 
@@ -111,6 +115,9 @@ public class LightFlicker : CanvasModulate
 	
 	private void _on_LevelStartTimer_timeout()
 	{
+		tick1 = false;
+		tick2 = false;
+		
 		_timer.Start(_timer.WaitTime);
 		_flashSoundTimer.Start(_flashSoundTimer.WaitTime);
 		_lightsOnTimer.Start(_lightsOnTimer.WaitTime);
