@@ -3,6 +3,8 @@ FEATURES
 ----------------
 - sound options
 - menu controller support
+- glass needs to respawn on death
+- tutorial messages
 
 ----------------
 POLISH
@@ -12,7 +14,7 @@ POLISH
 - laser target particle effect
 - breaking glass animation for falling platform
 - glowing moving platform
-- moving blocks back to OG position on death
+- moving glass blocks back to OG position on death
 - background ambience
 - Still some misaligned entry doors
 
@@ -20,5 +22,4 @@ POLISH
 BUGS
 ----------------
 - spawning off center
-- broken exit
-- glass needs to respawn on death
+- [nonrepro] screaming persisting through death

@@ -35,7 +35,6 @@ custom_colors/font_color_shadow = Color( 1, 1, 1, 0.137255 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
 custom_fonts/font = SubResource( 1 )
-text = "10.0"
 valign = 1
 
 [node name="LevelName" type="Label" parent="CanvasLayer"]
@@ -55,4 +54,23 @@ custom_constants/shadow_offset_y = 0
 custom_constants/shadow_as_outline = 0
 custom_fonts/font = SubResource( 2 )
 text = "This Machine Knows Hate"
+valign = 1
+
+[node name="Tutorial" type="Label" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -316.0
+margin_right = 1027.0
+margin_bottom = -282.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 0
+custom_constants/shadow_as_outline = 0
+custom_fonts/font = SubResource( 2 )
+align = 1
 valign = 1

@@ -15,7 +15,6 @@ public class LightFlicker : CanvasModulate
 	private AudioStreamPlayer _flash;
 	private AudioPlayer _audio;
 	
-	
 	public static float TimeLeft = 0f;
 	
 	[Signal] public delegate void LightsToggled(bool on);
@@ -39,16 +38,17 @@ public class LightFlicker : CanvasModulate
 	{
 		if (_levelStartTimer.IsStopped())
 		{
-			_ui.SetHint(_timer.TimeLeft.ToString("0.0"));
+			if(!_timer.IsStopped())
+				_ui.SetHint(_timer.TimeLeft.ToString("0.0"));
 		}
 		else
 		{
+			_ui.SetHint(string.Empty);
+			
 			if (_levelStartTimer.TimeLeft.ToString("0.00").Contains("1."))
 			{
 				if(!tick1)
 					_audio.Play("Tick");
-				
-				_ui.SetHint(_levelStartTimer.TimeLeft.ToString("ready"));
 				
 				tick1 = true;
 			}
@@ -57,7 +57,6 @@ public class LightFlicker : CanvasModulate
 				if(!tick2)
 					_audio.Play("Tick");
 				
-				_ui.SetHint(_levelStartTimer.TimeLeft.ToString("set"));
 				tick2 = true;
 			}
 		}
