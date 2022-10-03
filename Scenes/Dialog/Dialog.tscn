@@ -18,14 +18,18 @@ _textSpeed = 0.1
 [node name="Text" type="Label" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 40.0
+margin_right = -45.0
+margin_bottom = 49.0
 rect_scale = Vector2( 1, 0.80299 )
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_colors/font_color = Color( 1, 1, 1, 0.380392 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "This Machine Knows Hate"
 align = 1
 valign = 1
+autowrap = true
 
 [node name="Indicator" type="Polygon2D" parent="CanvasLayer"]
 scale = Vector2( 58.8715, -67.8327 )

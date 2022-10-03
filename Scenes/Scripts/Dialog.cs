@@ -7,6 +7,7 @@ using Godot.Collections;
 public class Dialog : Control
 {
 	[Export] private float _textSpeed;
+	[Export] private string _file;
 
 	private int _phraseNum;
 	private bool _finished;
@@ -14,23 +15,25 @@ public class Dialog : Control
 	private Timer _timer;
 	private Polygon2D _indicator;
 	private List<DialogItem> _dialog;
+	private Game _game;
 	
 	public override void _Ready()
 	{
 		_text = GetNode<Label>("CanvasLayer/Text");
 		_timer = GetNode<Timer>("CanvasLayer/Timer");
 		_indicator = GetNode<Polygon2D>("CanvasLayer/Indicator");
+		_game = GetTree().Root.GetNode<Game>("GameWorld");
 
 		_timer.WaitTime = _textSpeed;
 
-		Start("res://Dialog/dialog1.json");
+		Start();
 	}
 
-	public void Start(string dialogPath)
+	public void Start()
 	{
 		_finished = false;
 		
-		GetDialog(dialogPath);
+		GetDialog(_file);
 		
 		NextPhrase();
 	}
@@ -80,7 +83,7 @@ public class Dialog : Control
 	{
 		if (_phraseNum == _dialog.Count)
 		{
-			QueueFree();
+			_game.NextLevel();
 			return;
 		}
 

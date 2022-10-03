@@ -37,9 +37,10 @@ valign = 1
 [node name="LevelName" type="Label" parent="CanvasLayer"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -32.0
-margin_right = 1025.0
-margin_bottom = 2.0
+margin_left = 17.59
+margin_top = -37.0
+margin_right = 1042.59
+margin_bottom = -3.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_colors/font_color = Color( 1, 1, 1, 0.380392 )

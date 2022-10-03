@@ -70,6 +70,14 @@ public class LightFlicker : CanvasModulate
 		}
 	}
 
+	public void StartDialogLevel()
+	{
+		_timer.Stop();
+		_flashSoundTimer.Stop();
+		_lightsOnTimer.Stop();
+		_levelStartTimer.Stop();
+	}
+
 	public void StartNewLevel()
 	{
 		Player.MovementDisabled = true;
