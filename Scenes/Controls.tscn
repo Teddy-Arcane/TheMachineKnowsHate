@@ -5,6 +5,7 @@
 
 [sub_resource type="DynamicFont" id=2]
 size = 58
+outline_size = 1
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
