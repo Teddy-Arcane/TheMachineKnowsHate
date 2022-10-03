@@ -96,7 +96,7 @@ _gruntThreshold = 600.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "run"
-frame = 1
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -113,7 +113,6 @@ wait_time = 0.15
 one_shot = true
 
 [node name="DeathTimer" type="Timer" parent="."]
-wait_time = 2.0
 one_shot = true
 
 [node name="Light2D" type="Light2D" parent="."]

@@ -230,7 +230,7 @@ public class Player : KinematicBody2D
 		}
 		else if (!_grounded && IsOnFloor())
 		{
-			if (_lastVelocity.y > _fallDamageThresholdVelocity)
+			if (TerminalVelocity)
 			{
 				_audio.Stop("Scream");
 				_audio.Play("Crunch1");
