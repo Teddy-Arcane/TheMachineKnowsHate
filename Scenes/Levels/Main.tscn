@@ -157,6 +157,8 @@ _fallDamageThresholdVelocity = 1500.0
 _gruntThreshold = 750.0
 _downwardGravityModifier = 2.0
 
+[node name="AudioPlayer" parent="." instance=ExtResource( 6 )]
+
 [connection signal="timeout" from="LightFlicker/FlashTimer" to="LightFlicker" method="_on_Timer_timeout"]
 [connection signal="timeout" from="LightFlicker/LightsOnTimer" to="LightFlicker" method="_on_LightsOnTimer_timeout"]
 [connection signal="timeout" from="LightFlicker/LevelStartTimer" to="LightFlicker" method="_on_LevelStartTimer_timeout"]

@@ -9,6 +9,7 @@ public class Game : Node
 	private Label _hint;
 	private Label _levelname;
 	private KinematicBody2D _player;
+	private AudioPlayer _audio;
 	
 	public override void _Ready()
 	{
@@ -16,6 +17,9 @@ public class Game : Node
 		_hint = GetNode<Label>("MainUI/CanvasLayer/Hint");
 		_levelname = GetNode<Label>("MainUI/CanvasLayer/LevelName");
 		_player = GetNode<KinematicBody2D>("Player");
+		_audio = GetNode<AudioPlayer>("AudioPlayer");
+		
+		_audio.Play("Fan");
 		
 		NextLevel();
 	}
