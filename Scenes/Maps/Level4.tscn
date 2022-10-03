@@ -15,7 +15,7 @@ _levelName = "1-3 Spelunking"
 _message = "Long drops are [Lethal]"
 
 [node name="Entrance" parent="." instance=ExtResource( 3 )]
-position = Vector2( 511, 48 )
+position = Vector2( 511, 52 )
 scale = Vector2( 1, 1 )
 
 [node name="CloseToCamera" type="TileMap" parent="."]
