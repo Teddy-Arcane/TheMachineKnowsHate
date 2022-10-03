@@ -24,6 +24,9 @@ public class Game : Node
 	{
 		if(Input.IsActionJustPressed("skip"))
 			NextLevel();
+
+		if (Input.IsActionPressed("quit"))
+			GetTree().Quit();
 	}
 
 	public void NextLevel()

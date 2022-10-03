@@ -60,9 +60,6 @@ public class LightFlicker : CanvasModulate
 				_ui.SetHint(_levelStartTimer.TimeLeft.ToString("set"));
 				tick2 = true;
 			}
-			
-			
-
 		}
 	}
 
