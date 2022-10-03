@@ -19,11 +19,6 @@ _message = "[Blue Lasers] are tied to the [Lights]"
 position = Vector2( 54, 508 )
 scale = Vector2( 1, 1 )
 
-[node name="RedLaser" parent="." instance=ExtResource( 5 )]
-visible = false
-position = Vector2( 260, 480 )
-cast_to = Vector2( 350, 0 )
-
 [node name="RedLaser2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 500, 500 )
 rotation = 4.71239

@@ -91,12 +91,13 @@ _jumpVelocity = 130.0
 _sprintModifier = 1.75
 _walkLightRadius = 0.25
 _sprintLightRadius = 0.35
+_fallDamageThresholdVelocity = 985.0
 _gruntThreshold = 600.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "run"
-frame = 2
+frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
