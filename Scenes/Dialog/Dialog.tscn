@@ -1,11 +1,28 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Fonts/JosefinSans-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Scripts/Dialog.cs" type="Script" id=2]
+[ext_resource path="res://Sprites/cursor.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 33
 font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Blink"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -34,10 +51,16 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="Indicator" type="Polygon2D" parent="CanvasLayer"]
-scale = Vector2( 58.8715, -67.8327 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Indicator"]
-
 [node name="Timer" type="Timer" parent="CanvasLayer"]
 wait_time = 0.1
+
+[node name="Indicator" type="Node2D" parent="CanvasLayer"]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Indicator"]
+position = Vector2( 978, 569 )
+scale = Vector2( 0.64, 0.84 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Indicator/Sprite"]
+autoplay = "Blink"
+anims/Blink = SubResource( 2 )

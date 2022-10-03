@@ -13,7 +13,7 @@ public class Dialog : Control
 	private bool _finished;
 	private Label _text;
 	private Timer _timer;
-	private Polygon2D _indicator;
+	private Node2D _indicator;
 	private List<DialogItem> _dialog;
 	private Game _game;
 	
@@ -21,11 +21,10 @@ public class Dialog : Control
 	{
 		_text = GetNode<Label>("CanvasLayer/Text");
 		_timer = GetNode<Timer>("CanvasLayer/Timer");
-		_indicator = GetNode<Polygon2D>("CanvasLayer/Indicator");
+		_indicator = GetNode<Node2D>("CanvasLayer/Indicator");
 		_game = GetTree().Root.GetNode<Game>("GameWorld");
 
 		_timer.WaitTime = _textSpeed;
-
 		Start();
 	}
 
