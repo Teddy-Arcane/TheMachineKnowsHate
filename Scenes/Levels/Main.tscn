@@ -148,10 +148,14 @@ position = Vector2( 20, 0 )
 environment = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-_speed = 300.0
+_speed = 230.0
 _jumpVelocity = 650.0
 _gravity = 1200.0
+_sprintModifier = 1.5
 _sprintLightRadius = 0.3
+_fallDamageThresholdVelocity = 1500.0
+_gruntThreshold = 750.0
+_downwardGravityModifier = 2.0
 
 [connection signal="timeout" from="LightFlicker/FlashTimer" to="LightFlicker" method="_on_Timer_timeout"]
 [connection signal="timeout" from="LightFlicker/LightsOnTimer" to="LightFlicker" method="_on_LightsOnTimer_timeout"]

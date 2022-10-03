@@ -12,6 +12,7 @@ public class Player : KinematicBody2D
 	[Export] private float _sprintLightRadius = 1f;
 	[Export] private float _fallDamageThresholdVelocity = 950f;
 	[Export] private float _gruntThreshold = 500f;
+	[Export] private float _downwardGravityModifier = 3f;
 
 	private AnimatedSprite _animator;
 	private bool _grounded = true;
@@ -243,6 +244,8 @@ public class Player : KinematicBody2D
 
 			_grounded = true;
 			_hasJumped = false;
+			
+			GD.Print(_lastVelocity);
 		}
 
 		if (_velocity.y > 10f)
@@ -269,7 +272,7 @@ public class Player : KinematicBody2D
 
 	private void HandleGravity(float delta)
 	{
-		_velocity.y += _gravity * delta;
+		_velocity.y += (_gravity * delta) * (_velocity.y > 0 ? _downwardGravityModifier : 1);
 	}
 
 	private void HandleDirection(Vector2 velocity)
