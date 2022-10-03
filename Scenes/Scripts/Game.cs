@@ -64,12 +64,15 @@ public class Game : Node
 		{
 			var entrance = scene.GetNode<Node2D>("Entrance");
 			var player = GetNode<Player>("Player");
+			Player.MovementDisabled = true;
 			player.Visible = true;
-			player.SetInitialPosition(new Vector2(entrance.Position.x, entrance.Position.y ));
+			player.ZeroVelocity();
+			player.SetInitialPosition(entrance.Position);
 			player.Position = player.GetSpawnPoint();
 			player.PlayAnimation("idle");
 			player.ZeroVelocity();
-			
+			Player.MovementDisabled = true;
+
 			_hint.Visible = true;
 			_levelname.Visible = true;
 			await ToSignal(GetTree(), "idle_frame");

@@ -144,8 +144,6 @@ public class Player : KinematicBody2D
 		_audio.ToggleRun(false);
 		_audio.Stop("Run");
 		_audio.Stop("Scream");
-		
-		MoveAndSlide(_velocity);
 	}
 
 	public void PlayAnimation(string name)
