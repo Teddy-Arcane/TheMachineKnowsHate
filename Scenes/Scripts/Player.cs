@@ -32,6 +32,8 @@ public class Player : KinematicBody2D
 	public static bool MovementDisabled = false;
 
 	public static bool TerminalVelocity = false;
+	
+	[Signal] public delegate void PlayerRespawned();
 
 	public override void _Ready()
 	{
@@ -158,6 +160,8 @@ public class Player : KinematicBody2D
 
 	private async void Respawn()
 	{
+		EmitSignal("PlayerRespawned");
+		
 		_lastVelocity = Vector2.Zero;
 		PlayAnimation("idle");
 		Position = GetSpawnPoint();

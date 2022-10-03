@@ -8,6 +8,7 @@ public class FallingPlatform : KinematicBody2D
 	private AnimatedSprite _animated;
 	private CollisionShape2D _collider;
 	private bool _cracked = false;
+	private Player _player;
 
 	public override void _Ready()
 	{
@@ -15,6 +16,9 @@ public class FallingPlatform : KinematicBody2D
 		_fallTimer = GetNode<Timer>("FallTimer");
 		_animated = GetNode<AnimatedSprite>("AnimatedSprite");
 		_collider = GetNode<CollisionShape2D>("CollisionShape2D");
+		_player = GetTree().Root.GetNode<Player>("GameWorld/Player");
+		
+		_player.Connect("PlayerRespawned", this, "Respawn");
 	}
 
 	public void Crack()
@@ -30,6 +34,7 @@ public class FallingPlatform : KinematicBody2D
 
 	public void Respawn()
 	{
+		_cracked = false;
 		_collider.Disabled = false;
 		_animated.Play("normal");
 		Visible = true;
