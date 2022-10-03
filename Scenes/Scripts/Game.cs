@@ -19,7 +19,7 @@ public class Game : Node
 		_player = GetNode<KinematicBody2D>("Player");
 		_audio = GetNode<AudioPlayer>("AudioPlayer");
 
-		_audio.Play("Fan");
+		_audio.Play("Drone");
 		
 		NextLevel();
 	}
