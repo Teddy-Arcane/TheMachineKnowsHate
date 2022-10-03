@@ -23,6 +23,11 @@ public class Game : Node
 		
 		NextLevel();
 	}
+
+	public void PlaySuccess()
+	{
+		_audio.Play("Win2");
+	}
 	
 	public override void _Process(float delta)
 	{

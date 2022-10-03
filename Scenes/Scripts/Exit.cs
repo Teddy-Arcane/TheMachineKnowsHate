@@ -13,6 +13,7 @@ public class Exit : Area2D
 	private Timer _timer;
 	private Player _player;
 	private Label _hint;
+	private AudioPlayer _audio;
 	
 	public override void _Ready()
 	{
@@ -21,6 +22,7 @@ public class Exit : Area2D
 		_mainUI = GetTree().Root.GetNode<MainUI>("GameWorld/MainUI");
 		_timer = GetNode<Timer>("Timer");
 		_hint = GetTree().Root.GetNode<Label>("GameWorld/MainUI/CanvasLayer/Hint");
+		_audio = GetNode<AudioPlayer>("AudioPlayer");
 		
 		_mainUI.SetLevelName(_levelName);
 	}
@@ -43,6 +45,7 @@ public class Exit : Area2D
 		{
 			if (!Player.TerminalVelocity)
 			{
+				_game.PlaySuccess();
 				_game.NextLevel();
 				_levelId = _game.Level;
 			}
