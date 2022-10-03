@@ -118,7 +118,7 @@ public class LightFlicker : CanvasModulate
 		Player.MovementDisabled = false;
 
 		_flash.Play();
-		_audio.Play("Fan");
+		_audio.Play("Drone");
 		Color = Colors.White;
 		_lightsOnTimer.Start();
 		_soundTimer.Start();
