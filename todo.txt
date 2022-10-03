@@ -1,20 +1,23 @@
 ----------------
 FEATURES
 ----------------
-- sound options
-- blinking cursor
-- epilepsy warning
+- credits screen
+- controls screen
 
 ----------------
 POLISH
 ----------------
-- movement trails
-- moving lasers
-- laser target particle effect
-- glowing moving platform
+- second frame for idle
+- optional repsawing platforms
+- creepy drone
 
 ----------------
 BUGS
 ----------------
 - [nonrepro] screaming persisting through death
-- character facing wrong way
+
+-----------------
+MARKETING
+-----------------
+Trailer
+Copy

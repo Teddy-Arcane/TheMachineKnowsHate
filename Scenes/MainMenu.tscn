@@ -30,32 +30,50 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -131.0
-margin_top = -19.0
-margin_right = 119.0
-margin_bottom = 184.0
+margin_left = -157.0
+margin_top = -53.0
+margin_right = 160.0
+margin_bottom = 288.0
 
 [node name="Start" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
-margin_right = 250.0
+margin_right = 317.0
 margin_bottom = 65.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "Start"
 flat = true
 
-[node name="Options" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="Controls" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 margin_top = 69.0
-margin_right = 250.0
+margin_right = 317.0
 margin_bottom = 134.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "How To Play"
+flat = true
+
+[node name="Options" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+margin_top = 138.0
+margin_right = 317.0
+margin_bottom = 203.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "Options"
 flat = true
 
+[node name="Credits" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+margin_top = 207.0
+margin_right = 317.0
+margin_bottom = 272.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Credits"
+flat = true
+
 [node name="Quit" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
-margin_top = 138.0
-margin_right = 250.0
-margin_bottom = 203.0
+margin_top = 276.0
+margin_right = 317.0
+margin_bottom = 341.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "Quit"
@@ -64,10 +82,10 @@ flat = true
 [node name="Tutorial" type="Label" parent="CanvasLayer/ColorRect"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = -1.0
-margin_top = -521.0
-margin_right = 1024.0
-margin_bottom = -453.0
+margin_left = -3.0
+margin_top = -576.0
+margin_right = 1022.0
+margin_bottom = -508.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -82,5 +100,7 @@ align = 1
 valign = 1
 
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/Controls" to="." method="_on_Controls_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

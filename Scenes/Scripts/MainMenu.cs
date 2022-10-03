@@ -27,4 +27,14 @@ public class MainMenu : Control
 	{
 		GetTree().Quit();
 	}
+	
+	private void _on_Credits_pressed()
+	{
+		GetTree().ChangeScene("res://Scenes/Credits.tscn");
+	}
+	
+	private void _on_Controls_pressed()
+	{
+		GetTree().ChangeScene("res://Scenes/Controls.tscn");
+	}
 }
