@@ -1,8 +1,6 @@
 ----------------
 FEATURES
 ----------------
-- credits screen
-- controls screen
 
 ----------------
 POLISH
@@ -10,6 +8,7 @@ POLISH
 - second frame for idle
 - optional repsawing platforms
 - creepy drone
+- 3-1 door
 
 ----------------
 BUGS
