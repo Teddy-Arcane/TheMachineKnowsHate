@@ -91,6 +91,7 @@ script = ExtResource( 2 )
 shape = SubResource( 16 )
 
 [node name="FallTimer" type="Timer" parent="."]
+wait_time = 0.45
 one_shot = true
 
 [node name="AudioPlayer" parent="." instance=ExtResource( 4 )]
