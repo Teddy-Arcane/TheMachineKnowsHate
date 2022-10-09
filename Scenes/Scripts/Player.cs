@@ -13,6 +13,7 @@ public class Player : KinematicBody2D
 	[Export] private float _fallDamageThresholdVelocity = 950f;
 	[Export] private float _gruntThreshold = 500f;
 	[Export] private float _downwardGravityModifier = 3f;
+	[Export] private float _blinkDistance = 30f;
 
 	private AnimatedSprite _animator;
 	private bool _grounded = true;
@@ -28,6 +29,7 @@ public class Player : KinematicBody2D
 	private Timer _deathTimer;
 	private bool _isDead = false;
 	private CollisionShape2D _collider;
+	private RayCast2D _blinkCast;
 
 	public static bool MovementDisabled = false;
 
@@ -45,6 +47,7 @@ public class Player : KinematicBody2D
 		_audio = GetNode<AudioPlayer>("AudioPlayer");
 		_deathTimer = GetNode<Timer>("DeathTimer");
 		_collider = GetNode<CollisionShape2D>("CollisionShape2D");
+		_blinkCast = GetNode<RayCast2D>("BlinkCast");
 	}
 
 	public override void _PhysicsProcess(float delta)
@@ -52,154 +55,50 @@ public class Player : KinematicBody2D
 		if (_isDead || MovementDisabled)
 		{
 			_audio.Stop("Run");
-			
 			return;
 		}
-		
-		if (_velocity.y > 0)
-			_lastVelocity = _velocity;
 
-		if (_lastVelocity.y > (_fallDamageThresholdVelocity))
-		{
-			TerminalVelocity = true;
-			_audio.Play("Scream");
-		}
-		
-		_velocity.x = 0;
-
+		CalculateFallDamage();
 		HandleMovement();
 		HandleJump();
 		HandleGravity(delta);
-
+		
+		if (Input.IsActionJustPressed("dash") && !IsOnFloor())
+		{
+			var dir = _velocity.x > 0 ? "left" : "right";
+			if (dir == "left")
+			{
+				_velocity = Vector2.Zero;
+				if (!_blinkCast.IsColliding())
+				{
+					Position = new Vector2(Position.x + _blinkDistance, Position.y);
+				}
+				else
+				{
+					Position = _blinkCast.GetCollisionPoint();
+				}
+			}
+			else if (dir == "right")
+			{
+				_velocity = Vector2.Zero;
+				if (!_blinkCast.IsColliding())
+				{
+					Position = new Vector2(Position.x - _blinkDistance, Position.y);
+				}
+				else
+				{
+					Position = _blinkCast.GetCollisionPoint();
+				}
+			}
+		}
+		
 		var wasOnFloor = IsOnFloor();
 		_velocity = MoveAndSlide(_velocity, Vector2.Up);
-
-		for (int i = 0; i < GetSlideCount(); i++)
-		{
-			var collision = GetSlideCollision(i);
-			var plat = collision.Collider as FallingPlatform;
-			if (plat != null)
-			{
-				plat.Crack();
-			}
-		}
-
-		if (wasOnFloor && !IsOnFloor())
-		{
-			_coyoteTimer.Start();
-		}
-
-		if (IsOnFloor() && !_jumpBuffer.IsStopped())
-		{
-			DoJump();
-		}
-
+		CheckForFallingPlatforms();
+		CheckCoyoteAndBuffer(wasOnFloor);
 		HandleDirection(_velocity);
-
-		if (_velocity.x == 0)
-		{
-			_pointLight.TextureScale = _idleLightRadius;
-		}
-		else
-		{
-			if (Input.IsActionPressed("sprint"))
-			{
-				_pointLight.TextureScale = _sprintLightRadius;
-			}
-			else
-			{
-				_pointLight.TextureScale = _walkLightRadius;
-			}
-		}
+		SetLightSize();
 	}
-
-	public void SetInitialPosition(Vector2 initPosit)
-	{
-		_initialPosition = initPosit;
-	}
-
-	public void LaserKill()
-	{
-		_audio.Stop("Scream");
-		_animator.Play("cinders");
-		_audio.Play("Zap");
-		
-		Kill();
-	}
-
-	public void Kill()
-	{
-		var finalExit = GetTree().Root.GetNodeOrNull<Exit>("GameWorld/Level24/Exit");
-		if (finalExit != null)
-		{
-			_collider.Disabled = true;
-			_velocity = Vector2.Zero;
-
-			MoveAndSlide(_velocity);
-
-			_isDead = true;
-		}
-		else
-		{
-			ActuallyKill();
-		}
-	}
-
-	public void StopScream()
-	{
-		_audio.Stop("Scream");
-	}
-
-	public void ActuallyKill()
-	{
-		_collider.Disabled = true;
-		_velocity = Vector2.Zero;
-
-		MoveAndSlide(_velocity);
-
-		_isDead = true;
-		_deathTimer.Start();
-	}
-
-	public void ZeroVelocity()
-	{
-		_lastVelocity = Vector2.Zero;
-		_velocity = Vector2.Zero;
-		_audio.ToggleRun(false);
-		_audio.Stop("Run");
-		_audio.Stop("Scream");
-	}
-
-	public void PlayAnimation(string name)
-	{
-		_animator.Play(name);
-	}
-
-	public Vector2 GetSpawnPoint()
-	{
-		return new Vector2(_initialPosition.x, _initialPosition.y + 25f);
-	}
-
-	private async void Respawn()
-	{
-		EmitSignal("PlayerRespawned");
-		
-		_lastVelocity = Vector2.Zero;
-		PlayAnimation("idle");
-		Position = GetSpawnPoint();
-		
-		await ToSignal(GetTree(), "idle_frame");
-		
-		_collider.Disabled = false;
-		_isDead = false;
-
-		TerminalVelocity = false;
-	}
-
-	// public void TriggerDialog(string path)
-	// {
-	// 	//_ui.StartDialog(path);
-	// }
 
 	private void HandleMovement()
 	{
@@ -323,9 +222,155 @@ public class Player : KinematicBody2D
 			var movingLeft = Input.IsActionPressed("move_left");
 			_animator.FlipH = movingLeft;
 			_lastDirection = movingLeft ? Vector2.Left: Vector2.Right;
+
+			_blinkCast.CastTo = movingLeft
+				? new Vector2(_blinkDistance * -1, 0f)
+				: new Vector2(_blinkDistance, 0f);
+		}
+	}
+	
+	private async void Respawn()
+	{
+		EmitSignal("PlayerRespawned");
+		
+		_lastVelocity = Vector2.Zero;
+		PlayAnimation("idle");
+		Position = GetSpawnPoint();
+		
+		await ToSignal(GetTree(), "idle_frame");
+		
+		_collider.Disabled = false;
+		_isDead = false;
+
+		TerminalVelocity = false;
+	}
+	
+	private void CalculateFallDamage()
+	{
+		if (_velocity.y > 0)
+			_lastVelocity = _velocity;
+
+		if (_lastVelocity.y > (_fallDamageThresholdVelocity))
+		{
+			TerminalVelocity = true;
+			_audio.Play("Scream");
+		}
+		
+		_velocity.x = 0;
+	}
+
+	private void CheckForFallingPlatforms()
+	{
+		for (int i = 0; i < GetSlideCount(); i++)
+		{
+			var collision = GetSlideCollision(i);
+			var plat = collision.Collider as FallingPlatform;
+			if (plat != null)
+			{
+				plat.Crack();
+			}
 		}
 	}
 
+	private void SetLightSize()
+	{
+		if (_velocity.x == 0)
+		{
+			_pointLight.TextureScale = _idleLightRadius;
+		}
+		else
+		{
+			if (Input.IsActionPressed("sprint"))
+			{
+				_pointLight.TextureScale = _sprintLightRadius;
+			}
+			else
+			{
+				_pointLight.TextureScale = _walkLightRadius;
+			}
+		}
+	}
+
+	private void CheckCoyoteAndBuffer(bool wasOnFloor)
+	{
+		if (wasOnFloor && !IsOnFloor())
+		{
+			_coyoteTimer.Start();
+		}
+
+		if (IsOnFloor() && !_jumpBuffer.IsStopped())
+		{
+			DoJump();
+		}
+	}
+	
+	public void SetInitialPosition(Vector2 initPosit)
+	{
+		_initialPosition = initPosit;
+	}
+
+	public void LaserKill()
+	{
+		_audio.Stop("Scream");
+		_animator.Play("cinders");
+		_audio.Play("Zap");
+		
+		Kill();
+	}
+
+	public void Kill()
+	{
+		var finalExit = GetTree().Root.GetNodeOrNull<Exit>("GameWorld/Level24/Exit");
+		if (finalExit != null)
+		{
+			_collider.Disabled = true;
+			_velocity = Vector2.Zero;
+
+			MoveAndSlide(_velocity);
+
+			_isDead = true;
+		}
+		else
+		{
+			ActuallyKill();
+		}
+	}
+
+	public void StopScream()
+	{
+		_audio.Stop("Scream");
+	}
+
+	public void ActuallyKill()
+	{
+		_collider.Disabled = true;
+		_velocity = Vector2.Zero;
+
+		MoveAndSlide(_velocity);
+
+		_isDead = true;
+		_deathTimer.Start();
+	}
+
+	public void ZeroVelocity()
+	{
+		_lastVelocity = Vector2.Zero;
+		_velocity = Vector2.Zero;
+		_audio.ToggleRun(false);
+		_audio.Stop("Run");
+		_audio.Stop("Scream");
+	}
+
+	public void PlayAnimation(string name)
+	{
+		_animator.Play(name);
+	}
+
+	public Vector2 GetSpawnPoint()
+	{
+		return new Vector2(_initialPosition.x, _initialPosition.y + 25f);
+	}
+	
 	private void _on_DeathTimer_timeout()
 	{
 		Respawn();

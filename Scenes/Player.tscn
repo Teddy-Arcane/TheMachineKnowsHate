@@ -101,11 +101,11 @@ _walkLightRadius = 0.25
 _sprintLightRadius = 0.35
 _fallDamageThresholdVelocity = 985.0
 _gruntThreshold = 600.0
+_blinkDistance = 35.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -130,5 +130,11 @@ texture_scale = 0.2
 energy = 0.5
 
 [node name="AudioPlayer" parent="." instance=ExtResource( 15 )]
+
+[node name="BlinkCast" type="RayCast2D" parent="."]
+position = Vector2( -0.5, 11.5 )
+enabled = true
+cast_to = Vector2( 30, 0 )
+collision_mask = 3
 
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
