@@ -31,10 +31,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -157.0
-margin_top = -53.0
-margin_right = 160.0
-margin_bottom = 288.0
+margin_left = -151.0
+margin_top = -43.0
+margin_right = 166.0
+margin_bottom = 298.0
 
 [node name="Start" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 margin_right = 317.0
@@ -86,7 +86,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = -3.0
 margin_top = -576.0
-margin_right = 1022.0
+margin_right = 1277.0
 margin_bottom = -508.0
 size_flags_horizontal = 3
 size_flags_vertical = 6

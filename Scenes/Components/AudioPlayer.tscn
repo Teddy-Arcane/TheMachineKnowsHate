@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Sounds/jump2.wav" type="AudioStream" id=1]
 [ext_resource path="res://Sounds/jump3.wav" type="AudioStream" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Sounds/Win1.wav" type="AudioStream" id=21]
 [ext_resource path="res://Sounds/Win2.wav" type="AudioStream" id=22]
 [ext_resource path="res://Sounds/Drone.wav" type="AudioStream" id=23]
+[ext_resource path="res://Sounds/dash_thump.wav" type="AudioStream" id=24]
 
 [node name="AudioPlayer" type="Node2D"]
 position = Vector2( 5, 5 )
@@ -113,5 +114,10 @@ pitch_scale = 0.77
 
 [node name="Drone" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 23 )
+volume_db = -10.0
+pitch_scale = 0.77
+
+[node name="DashTump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
 volume_db = -10.0
 pitch_scale = 0.77

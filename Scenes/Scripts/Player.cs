@@ -29,7 +29,8 @@ public class Player : KinematicBody2D
 	private Timer _deathTimer;
 	private bool _isDead = false;
 	private CollisionShape2D _collider;
-	private RayCast2D _blinkCast;
+	private RayCast2D _blinkCastTop;
+	private RayCast2D _blinkCastBottom;
 
 	public static bool MovementDisabled = false;
 
@@ -47,7 +48,8 @@ public class Player : KinematicBody2D
 		_audio = GetNode<AudioPlayer>("AudioPlayer");
 		_deathTimer = GetNode<Timer>("DeathTimer");
 		_collider = GetNode<CollisionShape2D>("CollisionShape2D");
-		_blinkCast = GetNode<RayCast2D>("BlinkCast");
+		_blinkCastTop = GetNode<RayCast2D>("BlinkCastTop");
+		_blinkCastBottom = GetNode<RayCast2D>("BlinkCastBottom");
 	}
 
 	public override void _PhysicsProcess(float delta)
@@ -62,42 +64,47 @@ public class Player : KinematicBody2D
 		HandleMovement();
 		HandleJump();
 		HandleGravity(delta);
-		
-		if (Input.IsActionJustPressed("dash") && !IsOnFloor())
-		{
-			var dir = _velocity.x > 0 ? "left" : "right";
-			if (dir == "left")
-			{
-				_velocity = Vector2.Zero;
-				if (!_blinkCast.IsColliding())
-				{
-					Position = new Vector2(Position.x + _blinkDistance, Position.y);
-				}
-				else
-				{
-					Position = _blinkCast.GetCollisionPoint();
-				}
-			}
-			else if (dir == "right")
-			{
-				_velocity = Vector2.Zero;
-				if (!_blinkCast.IsColliding())
-				{
-					Position = new Vector2(Position.x - _blinkDistance, Position.y);
-				}
-				else
-				{
-					Position = _blinkCast.GetCollisionPoint();
-				}
-			}
-		}
-		
+		HandleDash();
 		var wasOnFloor = IsOnFloor();
 		_velocity = MoveAndSlide(_velocity, Vector2.Up);
 		CheckForFallingPlatforms();
 		CheckCoyoteAndBuffer(wasOnFloor);
 		HandleDirection(_velocity);
 		SetLightSize();
+	}
+
+	private void HandleDash()
+	{
+		if (Input.IsActionJustPressed("dash") && !IsOnFloor())
+		{
+			if (_velocity.x != 0)
+			{
+				var direction = _velocity.x > 0 ? _blinkDistance : _blinkDistance * -1;
+				
+				Position = IsDashColliding()
+					? DashCollisionPoint()
+					: new Vector2(Position.x + direction, Position.y);
+				
+				_audio.Play("DashTump");
+				
+				_velocity = Vector2.Zero;
+			}
+		}
+	}
+
+	private Vector2 DashCollisionPoint()
+	{
+		if (_blinkCastBottom.IsColliding())
+			return _blinkCastBottom.GetCollisionPoint();
+		else if (_blinkCastTop.IsColliding())
+			return _blinkCastTop.GetCollisionPoint();
+		else
+			return Position;
+	}
+
+	private bool IsDashColliding()
+	{
+		return _blinkCastBottom.IsColliding() || _blinkCastTop.IsColliding();
 	}
 
 	private void HandleMovement()
@@ -223,7 +230,11 @@ public class Player : KinematicBody2D
 			_animator.FlipH = movingLeft;
 			_lastDirection = movingLeft ? Vector2.Left: Vector2.Right;
 
-			_blinkCast.CastTo = movingLeft
+			_blinkCastBottom.CastTo = movingLeft
+				? new Vector2(_blinkDistance * -1, 0f)
+				: new Vector2(_blinkDistance, 0f);
+			
+			_blinkCastTop.CastTo = movingLeft
 				? new Vector2(_blinkDistance * -1, 0f)
 				: new Vector2(_blinkDistance, 0f);
 		}

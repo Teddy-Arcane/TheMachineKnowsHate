@@ -57,27 +57,27 @@ custom_fonts/font = SubResource( 1 )
 text = "V-Sync:"
 
 [node name="OK" type="Button" parent="CanvasLayer/ColorRect"]
-margin_left = 364.0
-margin_top = 433.0
-margin_right = 661.0
-margin_bottom = 498.0
+margin_left = 480.0
+margin_top = 438.0
+margin_right = 777.0
+margin_bottom = 503.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "Back"
 flat = true
 
 [node name="Fullscreen" type="CheckBox" parent="CanvasLayer/ColorRect"]
-margin_left = 635.0
-margin_top = 235.0
-margin_right = 659.0
-margin_bottom = 259.0
+margin_left = 770.0
+margin_top = 298.0
+margin_right = 794.0
+margin_bottom = 322.0
 rect_scale = Vector2( 2, 2 )
 
 [node name="Vsync" type="CheckBox" parent="CanvasLayer/ColorRect"]
-margin_left = 552.0
-margin_top = 303.0
-margin_right = 576.0
-margin_bottom = 327.0
+margin_left = 771.0
+margin_top = 358.0
+margin_right = 795.0
+margin_bottom = 382.0
 rect_scale = Vector2( 2, 2 )
 
 [connection signal="pressed" from="CanvasLayer/ColorRect/OK" to="." method="_on_OK_pressed"]

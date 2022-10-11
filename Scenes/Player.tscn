@@ -106,6 +106,7 @@ _blinkDistance = 35.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -131,7 +132,13 @@ energy = 0.5
 
 [node name="AudioPlayer" parent="." instance=ExtResource( 15 )]
 
-[node name="BlinkCast" type="RayCast2D" parent="."]
+[node name="BlinkCastTop" type="RayCast2D" parent="."]
+position = Vector2( 0, -7 )
+enabled = true
+cast_to = Vector2( 30, 0 )
+collision_mask = 3
+
+[node name="BlinkCastBottom" type="RayCast2D" parent="."]
 position = Vector2( -0.5, 11.5 )
 enabled = true
 cast_to = Vector2( 30, 0 )

@@ -26,10 +26,10 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="OK" type="Button" parent="CanvasLayer/ColorRect"]
-margin_left = 340.0
-margin_top = 515.0
-margin_right = 637.0
-margin_bottom = 580.0
+margin_left = 510.0
+margin_top = 598.0
+margin_right = 807.0
+margin_bottom = 663.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "OK"
@@ -40,10 +40,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -318.0
-margin_top = -165.0
-margin_right = 706.0
-margin_bottom = 435.0
+margin_left = -299.0
+margin_top = -144.0
+margin_right = 725.0
+margin_bottom = 456.0
 rect_scale = Vector2( 0.611209, 0.564946 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -283,10 +283,10 @@ align = 1
 valign = 1
 
 [node name="Tutorial" type="Label" parent="CanvasLayer/ColorRect"]
-margin_left = 336.0
-margin_top = 74.0
-margin_right = 589.0
-margin_bottom = 142.0
+margin_left = 481.0
+margin_top = 133.0
+margin_right = 734.0
+margin_bottom = 201.0
 rect_scale = Vector2( 0.661084, 0.643772 )
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -302,10 +302,10 @@ align = 1
 valign = 1
 
 [node name="Tutorial2" type="Label" parent="CanvasLayer/ColorRect"]
-margin_left = 488.0
-margin_top = 74.0
-margin_right = 741.0
-margin_bottom = 142.0
+margin_left = 656.0
+margin_top = 134.0
+margin_right = 909.0
+margin_bottom = 202.0
 rect_scale = Vector2( 0.661084, 0.643772 )
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -321,10 +321,10 @@ align = 1
 valign = 1
 
 [node name="Tutorial3" type="Label" parent="CanvasLayer/ColorRect"]
-margin_left = 649.0
-margin_top = 74.0
-margin_right = 916.0
-margin_bottom = 142.0
+margin_left = 803.0
+margin_top = 133.0
+margin_right = 1070.0
+margin_bottom = 201.0
 rect_scale = Vector2( 0.661084, 0.643772 )
 size_flags_horizontal = 3
 size_flags_vertical = 6

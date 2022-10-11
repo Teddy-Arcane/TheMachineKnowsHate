@@ -156,6 +156,7 @@ _sprintLightRadius = 0.3
 _fallDamageThresholdVelocity = 1350.0
 _gruntThreshold = 750.0
 _downwardGravityModifier = 2.0
+_blinkDistance = 55.0
 
 [node name="AudioPlayer" parent="." instance=ExtResource( 6 )]
 
